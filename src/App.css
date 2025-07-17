@@ -56,9 +56,10 @@ a {
 
 	--font-family: "Helvetica", "Arial", sans-serif;
 	--font-size-base: 16px;
+	--font-size-xsmall: 10px;
 	--font-size-small: 14px;
 	--font-size-large: 20px;
-	--font-size-title: 24px;
+	--font-size-title: 28px;
 
 	--spacing-xs: 4px;
 	--spacing-sm: 8px;

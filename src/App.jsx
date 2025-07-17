@@ -2,11 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import { CvTabsNavigation } from "./components/CvTabsNavigation/CvTabsNavigation";
 import { TABS } from "./components/CvTabsNavigation/Tabs";
+import { Header } from "./components/Header/Header";
 
 const cvData = {
 	personalInfo: {
 		fullName: "Fernando Herrero Núñez",
-		title: "Junior Frontend Stack Developer",
+		title: "Junior Frontend Developer",
 		location: "Madrid, Spain",
 		email: "herrerofernando@gmail.com",
 		phone: "636325089",
@@ -83,10 +84,7 @@ function App() {
 	return (
 		<div className="app-container">
 			<CvTabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-			<h1>My CV online</h1>
-
-			{activeTab === TABS.SIMPLE}
-			{activeTab === TABS.INTERACTIVE}
+			<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
 		</div>
 	);
 }
