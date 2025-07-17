@@ -86,6 +86,6 @@
 
 .summary-btn.hide {
 	opacity: 0;
-	transform: translateY(-5px);
+	transform: translateY(-3px);
 	pointer-events: none;
 }
