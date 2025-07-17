@@ -1,0 +1,26 @@
+import "./Header.css";
+
+export const Header = ({ personalInfo, summary }) => {
+	const { fullName, title, location, email, phone, linkedin, github } = personalInfo;
+
+	return (
+		<section className="header-container">
+			<h1 className="header-name">{fullName}</h1>
+
+			<div className="header-content">
+				<p>{title}</p>
+				<p>{location}</p>
+				<a href={`mailto:${email}`}>{email}</a>
+				<a href={`tel:${phone}`}>+{phone}</a>
+				<a href={linkedin} target="_blank">
+					Linkedin
+				</a>
+				<a href={github} target="_blank">
+					Github
+				</a>
+			</div>
+
+			<p className="header-summary">{summary}</p>
+		</section>
+	);
+};
