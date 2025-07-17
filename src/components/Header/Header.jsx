@@ -28,11 +28,10 @@ export const Header = ({ activeTab, personalInfo, summary }) => {
 				</div>
 			</div>
 
-			{activeTab === "Interactive" && (
-				<button className="summary-btn" onClick={onClickSummary}>
-					{hideSummary ? "Show summary" : "Hide summary"}
-				</button>
-			)}
+			<button className={`summary-btn ${activeTab !== "Interactive" ? "hide" : ""}`} onClick={onClickSummary}>
+				{hideSummary ? "Show summary" : "Hide summary"}
+			</button>
+
 			{!hideSummary && (
 				<div className="header-summary">
 					<p className="summary-text">{summary}</p>

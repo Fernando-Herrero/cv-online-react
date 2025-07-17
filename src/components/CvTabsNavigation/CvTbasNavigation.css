@@ -7,10 +7,11 @@
 	margin-top: var(--spacing-xs);
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
+	transition: all 0.2s ease;
 }
 
-.tab[data-tab="interactive"] {
-	border-right: none;
+.tab.active {
+	transform: scale(1.2);
 }
 
 .tab:hover {
