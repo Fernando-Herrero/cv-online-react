@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Header.css";
 
-export const Header = ({ personalInfo, summary }) => {
+export const Header = ({ activeTab, personalInfo, summary }) => {
 	const { fullName, title, location, email, phone, linkedin, github } = personalInfo;
 	const [hideSummary, setHideSummary] = useState(false);
 
@@ -17,8 +17,8 @@ export const Header = ({ personalInfo, summary }) => {
 				<div className="header-content">
 					<p>{title}</p>
 					<p>{location}</p>
-					<a href={`mailto:${email}`}>{email}</a>
 					<a href={`tel:${phone}`}>+{phone}</a>
+					<a href={`mailto:${email}`}>{email}</a>
 					<a href={linkedin} target="_blank">
 						Linkedin
 					</a>
@@ -28,9 +28,11 @@ export const Header = ({ personalInfo, summary }) => {
 				</div>
 			</div>
 
-			<button className="summary-btn" onClick={onClickSummary}>
-				{hideSummary ? "Show summary" : "Hide summary"}
-			</button>
+			{activeTab === "Interactive" && (
+				<button className="summary-btn" onClick={onClickSummary}>
+					{hideSummary ? "Show summary" : "Hide summary"}
+				</button>
+			)}
 			{!hideSummary && (
 				<div className="header-summary">
 					<p className="summary-text">{summary}</p>

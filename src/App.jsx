@@ -84,9 +84,7 @@ function App() {
 	return (
 		<div className="app-container">
 			<CvTabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-
-			{activeTab === TABS.SIMPLE && <Header personalInfo={cvData.personalInfo} summary={cvData.summary} />}
-			{activeTab === TABS.INTERACTIVE && <Header personalInfo={cvData.personalInfo} summary={cvData.summary} />}
+			<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
 		</div>
 	);
 }

@@ -27,6 +27,7 @@
 	grid-template-columns: repeat(2, 1fr);
 	gap: var(--spacing-xs);
 	font-size: var(--font-size-small);
+	padding: var(--spacing-xs);
 }
 
 .header-content a {
@@ -77,4 +78,5 @@
 	font-style: italic;
 	font-size: var(--font-size-xsmall);
 	color: var(--text-light);
+	cursor: pointer;
 }
