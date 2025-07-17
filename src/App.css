@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	color: var(--text-color);
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+:root {
+	--bg-color: #ffffff;
+	--section-bg: #f9f9f9;
+	--line-color: #e0e0e0;
+	--color-hover: rgb(214, 214, 214);
+
+	--text-color: #222222;
+	--text-secondary: #555555;
+	--text-light: #888888;
+
+	--accent-color: #0073e6;
+	--accent-hover: #005bb5;
+
+	--font-family: "Helvetica", "Arial", sans-serif;
+	--font-size-base: 16px;
+	--font-size-small: 14px;
+	--font-size-large: 20px;
+	--font-size-title: 24px;
+
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 24px;
+	--spacing-xl: 32px;
+
+	--container-width: 95%;
+	--border-radius: 4px;
+
+	--box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.app-container {
+	width: var(--container-width);
+	margin: 0 auto;
+	box-shadow: var(--box-shadow);
+}
