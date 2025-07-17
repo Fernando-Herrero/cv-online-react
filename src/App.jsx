@@ -1,4 +1,7 @@
+import { useState } from "react";
 import "./App.css";
+import { CvTabsNavigation } from "./components/CvTabsNavigation/CvTabsNavigation";
+import { TABS } from "./components/CvTabsNavigation/Tabs";
 
 const cvData = {
 	personalInfo: {
@@ -75,10 +78,16 @@ Sports enthusiast, especially fitness and football.`,
 };
 
 function App() {
+	const [activeTab, setActiveTab] = useState(TABS.SIMPLE);
+
 	return (
-		<>
+		<div className="app-container">
+			<CvTabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
 			<h1>My CV online</h1>
-		</>
+
+			{activeTab === TABS.SIMPLE}
+			{activeTab === TABS.INTERACTIVE}
+		</div>
 	);
 }
 
