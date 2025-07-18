@@ -1,0 +1,17 @@
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    font-size: var(--font-size-small);
+}
+
+.experience-company-date {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.experience-responsabilities {
+    padding-left: var(--spacing-md);
+}
