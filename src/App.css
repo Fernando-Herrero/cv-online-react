@@ -82,7 +82,11 @@ a {
 h2 {
 	font-size: var(--font-size-large);
 	border-bottom: 1px solid var(--text-color);
-    width: 100%;
+	width: 100%;
+	background-color: var(--section-bg);
+	padding-top: var(--spacing-xs);
+	padding-left: var(--spacing-xs);
+	border-radius: var(--border-radius);
 }
 
 .section-container {

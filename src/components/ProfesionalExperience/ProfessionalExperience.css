@@ -1,17 +1,20 @@
 .experience-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    padding-top: var(--spacing-md);
-    font-size: var(--font-size-small);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	margin-top: var(--spacing-md);
+	padding: var(--spacing-xs);
+	font-size: var(--font-size-small);
+	background-color: var(--section-bg);
+	border-radius: var(--border-radius);
 }
 
 .experience-company-date {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
 }
 
 .experience-responsabilities {
-    padding-left: var(--spacing-md);
+	padding-left: var(--spacing-md);
 }
