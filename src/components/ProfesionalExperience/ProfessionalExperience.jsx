@@ -7,15 +7,15 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 			return (
 				<>
 					<CheckBoxItem
+						label={<strong>{company}</strong>}
 						checked={selectedItems?.experience?.[`${id}-company`] || false}
 						onChange={() => toggleExperienceItems(`${id}-company`)}
-						label={<strong>{company}</strong>}
 					/>
 
 					<CheckBoxItem
+						label={position}
 						checked={selectedItems?.experience?.[`${id}-position`] || false}
 						onChange={() => toggleExperienceItems(`${id}-position`)}
-						label={position}
 					/>
 				</>
 			);
@@ -35,15 +35,15 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 			return (
 				<>
 					<CheckBoxItem
+						label={<strong>{location}</strong>}
 						checked={selectedItems?.experience?.[`${id}-location`] || false}
 						onChange={() => toggleExperienceItems(`${id}-location`)}
-						label={<strong>{location}</strong>}
 					/>
 
 					<CheckBoxItem
+						label={period}
 						checked={selectedItems?.experience?.[`${id}-period`] || false}
 						onChange={() => toggleExperienceItems(`${id}-period`)}
-						label={period}
 					/>
 				</>
 			);
@@ -59,20 +59,29 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 	};
 
 	const renderResponsabilities = (isInteractive, id, responsabilities) => {
-		return responsabilities.map((responsability, i) => {
-			const key = `${id}-${i}`;
+		if (isInteractive) {
+			return responsabilities.map((responsability, i) => {
+				const key = `${id}-${i}`;
 
-			return isInteractive ? (
-				<CheckBoxItem
-					key={key}
-					checked={selectedItems?.experience?.[key] || false}
-					onChange={() => toggleExperienceItems(key)}
-					label={responsability}
-				/>
-			) : (
-				<li key={key}>{responsability}</li>
-			);
-		});
+				return (
+					<CheckBoxItem
+						key={key}
+						label={responsability}
+						checked={selectedItems?.experience?.[key] || false}
+						onChange={() => toggleExperienceItems(key)}
+						showBullet={true}
+					/>
+				);
+			});
+		}
+		return (
+			<ul>
+				{responsabilities.map((responsability, i) => {
+					const key = `${id}-${i}`;
+					return <li key={key}>{responsability}</li>;
+				})}
+			</ul>
+		);
 	};
 
 	return (
@@ -94,7 +103,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 									toggleExperienceItems
 								)}
 							</div>
-							<div className="experience-date">
+							<div className={`experience-date ${isInteractive ? "interactive-mode" : ""}`}>
 								{renderLocationAndPeriod(
 									isInteractive,
 									id,
@@ -106,7 +115,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 							</div>
 						</div>
 
-						<div className="experience-responsabilities">
+						<div className={`experience-responsabilities ${isInteractive ? "interactive-mode" : ""}`}>
 							{renderResponsabilities(
 								isInteractive,
 								id,
