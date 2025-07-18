@@ -2,19 +2,19 @@ import "./ProfessionalExperience.css";
 import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem.jsx";
 
 export const ProfessionalExperience = ({ activeTab, experience, selectedItems, toggleExperienceItems }) => {
-	const renderCompanyAndPosition = (isInteractive, baseKey, company, position) => {
+	const renderCompanyAndPosition = (isInteractive, id, company, position) => {
 		if (isInteractive) {
 			return (
 				<>
 					<CheckBoxItem
-						checked={selectedItems?.experience?.[`${baseKey}-company`] || false}
-						onChange={() => toggleExperienceItems(`${baseKey}-company`)}
+						checked={selectedItems?.experience?.[`${id}-company`] || false}
+						onChange={() => toggleExperienceItems(`${id}-company`)}
 						label={<strong>{company}</strong>}
 					/>
 
 					<CheckBoxItem
-						checked={selectedItems?.experience?.[`${baseKey}-position`] || false}
-						onChange={() => toggleExperienceItems(`${baseKey}-position`)}
+						checked={selectedItems?.experience?.[`${id}-position`] || false}
+						onChange={() => toggleExperienceItems(`${id}-position`)}
 						label={position}
 					/>
 				</>
@@ -30,19 +30,19 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		);
 	};
 
-	const renderLocationAndPeriod = (isInteractive, baseKey, location, period) => {
+	const renderLocationAndPeriod = (isInteractive, id, location, period) => {
 		if (isInteractive) {
 			return (
 				<>
 					<CheckBoxItem
-						checked={selectedItems?.experience?.[`${baseKey}-location`] || false}
-						onChange={() => toggleExperienceItems(`${baseKey}-location`)}
+						checked={selectedItems?.experience?.[`${id}-location`] || false}
+						onChange={() => toggleExperienceItems(`${id}-location`)}
 						label={<strong>{location}</strong>}
 					/>
 
 					<CheckBoxItem
-						checked={selectedItems?.experience?.[`${baseKey}-period`] || false}
-						onChange={() => toggleExperienceItems(`${baseKey}-period`)}
+						checked={selectedItems?.experience?.[`${id}-period`] || false}
+						onChange={() => toggleExperienceItems(`${id}-period`)}
 						label={period}
 					/>
 				</>
@@ -58,9 +58,9 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		);
 	};
 
-	const renderResponsabilities = (isInteractive, baseKey, responsabilities) => {
+	const renderResponsabilities = (isInteractive, id, responsabilities) => {
 		return responsabilities.map((responsability, i) => {
-			const key = `${baseKey}-responsability-${i}`;
+			const key = `${id}-${i}`;
 
 			return isInteractive ? (
 				<CheckBoxItem
@@ -78,17 +78,16 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 	return (
 		<section className="section-container">
 			<h2>Professional Experience</h2>
-			{experience.map(({ position, company, period, location, responsibilities }, index) => {
-				const baseKey = `${position}-${company}`;
+			{experience.map(({ position, company, period, location, responsibilities, id }) => {
 				const isInteractive = activeTab === "Interactive";
 
 				return (
-					<div key={`${baseKey}-${index}`} className="experience-content">
+					<div key={id} className="experience-content">
 						<div className="experience-company-date">
 							<div className={`experience-company ${isInteractive ? "interactive-mode" : ""}`}>
 								{renderCompanyAndPosition(
 									isInteractive,
-									baseKey,
+									id,
 									company,
 									position,
 									selectedItems,
@@ -98,7 +97,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 							<div className="experience-date">
 								{renderLocationAndPeriod(
 									isInteractive,
-									baseKey,
+									id,
 									location,
 									period,
 									selectedItems,
@@ -110,7 +109,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 						<div className="experience-responsabilities">
 							{renderResponsabilities(
 								isInteractive,
-								baseKey,
+								id,
 								responsibilities,
 								selectedItems,
 								toggleExperienceItems
