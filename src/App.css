@@ -78,3 +78,16 @@ a {
 	margin: 0 auto;
 	box-shadow: var(--box-shadow);
 }
+
+h2 {
+	font-size: var(--font-size-large);
+	border-bottom: 1px solid var(--text-color);
+    width: 100%;
+}
+
+.section-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: var(--spacing-xl);
+}

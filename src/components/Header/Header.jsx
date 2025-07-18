@@ -10,7 +10,7 @@ export const Header = ({ activeTab, personalInfo, summary }) => {
 	};
 
 	return (
-		<section className="header-container">
+		<section className="section-container">
 			<div className="header-name-content">
 				<h1 className="header-name">{fullName}</h1>
 

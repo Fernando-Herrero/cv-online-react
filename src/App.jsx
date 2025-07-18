@@ -3,6 +3,7 @@ import "./App.css";
 import { CvTabsNavigation } from "./components/CvTabsNavigation/CvTabsNavigation";
 import { TABS } from "./components/CvTabsNavigation/Tabs";
 import { Header } from "./components/Header/Header";
+import { ProfessionalExperience } from "./components/ProfesionalExperience/ProfessionalExperience";
 
 const cvData = {
 	personalInfo: {
@@ -80,11 +81,27 @@ Sports enthusiast, especially fitness and football.`,
 
 function App() {
 	const [activeTab, setActiveTab] = useState(TABS.SIMPLE);
+	const [selectedItems, setSelectedItems] = useState({
+		experience: {},
+		education: {},
+		technicalSkills: {},
+		languages: {},
+	});
+
+	const toggleExperienceItems = (key) => {
+		setSelectedItems((prev) => ({ ...prev, experience: { ...prev.experience, [key]: !prev.experience[key] } }));
+	};
 
 	return (
 		<div className="app-container">
 			<CvTabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
 			<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
+			<ProfessionalExperience
+				activeTab={activeTab}
+				experience={cvData.experience}
+				selectedItems={selectedItems}
+				toggleExperienceItems={toggleExperienceItems}
+			/>
 		</div>
 	);
 }
