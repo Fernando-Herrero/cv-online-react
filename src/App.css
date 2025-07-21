@@ -73,6 +73,8 @@ a {
 	width: var(--container-width);
 	margin: 0 auto;
 	box-shadow: var(--box-shadow);
+	padding-bottom: var(--spacing-sm);
+	margin-bottom: var(--spacing-sm);
 }
 
 h2 {
