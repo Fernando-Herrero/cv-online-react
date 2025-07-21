@@ -5,6 +5,7 @@ import { TABS } from "./components/CvTabsNavigation/Tabs";
 import { Header } from "./components/Header/Header";
 import { ProfessionalExperience } from "./components/ProfesionalExperience/ProfessionalExperience";
 import { ResumeButton } from "./components/ResumeButton/ResumeButton";
+import { ShowModal } from "./components/ShowModal/ShowModal";
 
 const cvData = {
 	personalInfo: {
@@ -95,6 +96,7 @@ function App() {
 		technicalSkills: {},
 		languages: {},
 	});
+	const [showModal, setShowModal] = useState(false);
 
 	const toggleExperienceItems = (key) => {
 		setSelectedItems((prev) => ({ ...prev, experience: { ...prev.experience, [key]: !prev.experience[key] } }));
@@ -110,8 +112,13 @@ function App() {
 				selectedItems={selectedItems}
 				toggleExperienceItems={toggleExperienceItems}
 			/>
-
-			{activeTab === "Interactive" && <ResumeButton selectedItems={selectedItems} />}
+			{activeTab === "Interactive" && <ResumeButton showModal={showModal} setShowModal={setShowModal} />}
+			{showModal && (
+				<>
+					<div className="overlay"></div>
+					<ShowModal showModal={showModal} setShowModal={setShowModal} selectedItems={selectedItems} />
+				</>
+			)}
 		</div>
 	);
 }
