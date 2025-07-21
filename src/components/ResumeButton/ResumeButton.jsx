@@ -1,13 +1,13 @@
 import "./ResumeButton.css";
 
-export const ResumeButton = ({ selectedItems }) => {
+export const ResumeButton = ({ showModal, setShowModal }) => {
 	const onResumeClick = () => {
-		console.log(selectedItems.experience);
+		setShowModal((prev) => !prev);
 	};
 
 	return (
 		<button className="resume-btn" onClick={onResumeClick}>
-			Resume
+			{showModal ? "Hide Resume" : "Resume"}
 		</button>
 	);
 };
