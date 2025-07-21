@@ -116,7 +116,13 @@ function App() {
 			{showModal && (
 				<>
 					<div className="overlay"></div>
-					<ShowModal showModal={showModal} setShowModal={setShowModal} selectedItems={selectedItems} />
+					<ShowModal
+						showModal={showModal}
+						setShowModal={setShowModal}
+						selectedItems={selectedItems}
+						activeTab={activeTab}
+						cvData={cvData}
+					/>
 				</>
 			)}
 		</div>

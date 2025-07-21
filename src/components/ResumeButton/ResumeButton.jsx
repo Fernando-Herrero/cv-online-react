@@ -2,7 +2,6 @@ import "./ResumeButton.css";
 
 export const ResumeButton = ({ showModal, setShowModal }) => {
 	const onResumeClick = () => {
-		console.log(setShowModal);
 		setShowModal((prev) => !prev);
 	};
 
