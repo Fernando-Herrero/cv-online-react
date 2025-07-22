@@ -7,6 +7,7 @@ import { ProfessionalExperience } from "./components/ProfesionalExperience/Profe
 import { ResumeButton } from "./components/ResumeButton/ResumeButton";
 import { ShowModal } from "./components/ShowModal/ShowModal";
 import { Education } from "./components/Education/Education";
+import { Skills } from "./components/Skills/Skills";
 
 const cvData = {
 	personalInfo: {
@@ -51,18 +52,18 @@ Sports enthusiast, especially fitness and football.`,
 
 	education: [
 		{
-			id: "edu1",
-			degree: "Bachelor's Degree in Human Nutrition and Dietetics",
-			institution: "Autonomous University of Madrid",
-			location: "Madrid, Spain",
-			period: "2014 – 2018",
-		},
-		{
 			id: "edu2",
 			degree: "Web Development Bootcamps & Self-Taught Training",
 			institution: "Various",
 			location: "Online / Self-paced",
 			period: "Ongoing",
+		},
+		{
+			id: "edu1",
+			degree: "Bachelor's Degree in Human Nutrition and Dietetics",
+			institution: "Autonomous University of Madrid",
+			location: "Madrid, Spain",
+			period: "2014 – 2018",
 		},
 	],
 
@@ -116,6 +117,12 @@ function App() {
 			<Education
 				activeTab={activeTab}
 				education={cvData.education}
+				selectedItems={selectedItems}
+				toggleCheckedItems={toggleCheckedItems}
+			/>
+			<Skills
+				activeTab={activeTab}
+				skills={cvData.technicalSkills}
 				selectedItems={selectedItems}
 				toggleCheckedItems={toggleCheckedItems}
 			/>

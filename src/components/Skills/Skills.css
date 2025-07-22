@@ -1,0 +1,10 @@
+.technical-skills-list {
+	align-self: flex-start;
+	font-size: var(--font-size-small);
+	list-style-position: inside;
+	background-color: var(--bg-color);
+	padding: var(--spacing-sm);
+	margin-top: var(--spacing-md);
+    border-radius: var(--border-radius);
+	width: 100%;
+}
