@@ -1,4 +1,4 @@
-.experience-content {
+.item-content {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-sm);
@@ -10,7 +10,7 @@
 	width: 100%;
 }
 
-.experience-company-date {
+.item-header {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xs);
@@ -20,22 +20,22 @@
 	padding-left: var(--spacing-md);
 }
 
-.experience-company.interactive-mode {
+.item-title-group.interactive-mode {
 	display: flex;
 	flex-direction: column;
 }
 
-.experience-company.interactive-mode label {
+.item-title-group.interactive-mode label {
 	display: flex;
 	align-items: center;
 }
 
-.experience-date.interactive-mode {
+.item-subtitle-group.interactive-mode {
 	display: flex;
 	flex-direction: column;
 }
 
-.experience-date.interactive-mode label {
+.item-subtitle-group.interactive-mode label {
 	display: flex;
 	align-items: center;
 }

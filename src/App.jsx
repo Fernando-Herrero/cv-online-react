@@ -6,6 +6,7 @@ import { Header } from "./components/Header/Header";
 import { ProfessionalExperience } from "./components/ProfesionalExperience/ProfessionalExperience";
 import { ResumeButton } from "./components/ResumeButton/ResumeButton";
 import { ShowModal } from "./components/ShowModal/ShowModal";
+import { Education } from "./components/Education/Education";
 
 const cvData = {
 	personalInfo: {
@@ -98,8 +99,8 @@ function App() {
 	});
 	const [showModal, setShowModal] = useState(false);
 
-	const toggleExperienceItems = (key) => {
-		setSelectedItems((prev) => ({ ...prev, experience: { ...prev.experience, [key]: !prev.experience[key] } }));
+	const toggleCheckedItems = (section, key) => {
+		setSelectedItems((prev) => ({ ...prev, [section]: { ...prev[section], [key]: !prev[section][key] } }));
 	};
 
 	return (
@@ -110,8 +111,15 @@ function App() {
 				activeTab={activeTab}
 				experience={cvData.experience}
 				selectedItems={selectedItems}
-				toggleExperienceItems={toggleExperienceItems}
+				toggleCheckedItems={toggleCheckedItems}
 			/>
+			<Education
+				activeTab={activeTab}
+				education={cvData.education}
+				selectedItems={selectedItems}
+				toggleCheckedItems={toggleCheckedItems}
+			/>
+
 			{activeTab === "Interactive" && <ResumeButton showModal={showModal} setShowModal={setShowModal} />}
 			{showModal && (
 				<>

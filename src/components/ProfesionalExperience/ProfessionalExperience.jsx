@@ -1,7 +1,7 @@
 import "./ProfessionalExperience.css";
 import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem.jsx";
 
-export const ProfessionalExperience = ({ activeTab, experience, selectedItems, toggleExperienceItems }) => {
+export const ProfessionalExperience = ({ activeTab, experience, selectedItems, toggleCheckedItems }) => {
 	const renderCompanyAndPosition = (isInteractive, id, company, position) => {
 		if (isInteractive) {
 			return (
@@ -9,13 +9,13 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 					<CheckBoxItem
 						label={<strong>{company}</strong>}
 						checked={selectedItems?.experience?.[`${id}-company`] || false}
-						onChange={() => toggleExperienceItems(`${id}-company`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-company`)}
 					/>
 
 					<CheckBoxItem
 						label={position}
 						checked={selectedItems?.experience?.[`${id}-position`] || false}
-						onChange={() => toggleExperienceItems(`${id}-position`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-position`)}
 					/>
 				</>
 			);
@@ -37,13 +37,13 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 					<CheckBoxItem
 						label={<strong>{location}</strong>}
 						checked={selectedItems?.experience?.[`${id}-location`] || false}
-						onChange={() => toggleExperienceItems(`${id}-location`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-location`)}
 					/>
 
 					<CheckBoxItem
 						label={period}
 						checked={selectedItems?.experience?.[`${id}-period`] || false}
-						onChange={() => toggleExperienceItems(`${id}-period`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-period`)}
 					/>
 				</>
 			);
@@ -68,7 +68,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 						key={key}
 						label={responsability}
 						checked={selectedItems?.experience?.[key] || false}
-						onChange={() => toggleExperienceItems(key)}
+						onChange={() => toggleCheckedItems("experience", key)}
 						showBullet={true}
 					/>
 				);
@@ -91,38 +91,18 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 				const isInteractive = activeTab === "Interactive";
 
 				return (
-					<div key={id} className="experience-content">
-						<div className="experience-company-date">
-							<div className={`experience-company ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderCompanyAndPosition(
-									isInteractive,
-									id,
-									company,
-									position,
-									selectedItems,
-									toggleExperienceItems
-								)}
+					<div key={id} className="item-content">
+						<div className="item-header">
+							<div className={`item-title-group ${isInteractive ? "interactive-mode" : ""}`}>
+								{renderCompanyAndPosition(isInteractive, id, company, position)}
 							</div>
-							<div className={`experience-date ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderLocationAndPeriod(
-									isInteractive,
-									id,
-									location,
-									period,
-									selectedItems,
-									toggleExperienceItems
-								)}
+							<div className={`item-subtitle-group ${isInteractive ? "interactive-mode" : ""}`}>
+								{renderLocationAndPeriod(isInteractive, id, location, period)}
 							</div>
 						</div>
 
 						<div className={`experience-responsabilities ${isInteractive ? "interactive-mode" : ""}`}>
-							{renderResponsabilities(
-								isInteractive,
-								id,
-								responsibilities,
-								selectedItems,
-								toggleExperienceItems
-							)}
+							{renderResponsabilities(isInteractive, id, responsibilities)}
 						</div>
 					</div>
 				);
