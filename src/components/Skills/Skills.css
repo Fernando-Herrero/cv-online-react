@@ -1,12 +1,12 @@
-.technical-skills-list {
+.items-list {
 	list-style-position: inside;
 }
 
-.technical-skills-list li {
+.items-list li {
 	padding-bottom: var(--spacing-xs);
 }
 
-.skills-items-content {
+.items-content {
 	gap: var(--spacing-xs);
 	margin-top: var(--spacing-md);
 	padding: var(--spacing-xs);
@@ -16,29 +16,8 @@
 	width: 100%;
 }
 
-.skills-items-content.interactive-mode {
+.items-content.interactive-mode {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-}
-
-.skill-item {
-	width: fit-content;
-	padding: var(--spacing-xs);
-	border-radius: var(--border-radius);
-	background-color: var(--bg-color);
-}
-
-.skill-item.selected {
-	background-color: var(--accent-color);
-	color: var(--bg-color);
-}
-
-.skill-item.selected:hover {
-	background-color: var(--accent-hover);
-}
-
-.skill-item:hover {
-	background-color: var(--color-hover);
-	transform: translateY(-1px);
 }

@@ -8,6 +8,7 @@ import { ResumeButton } from "./components/ResumeButton/ResumeButton";
 import { ShowModal } from "./components/ShowModal/ShowModal";
 import { Education } from "./components/Education/Education";
 import { Skills } from "./components/Skills/Skills";
+import { Languages } from "./components/Languages/Languages";
 
 const cvData = {
 	personalInfo: {
@@ -104,19 +105,19 @@ function App() {
 		setSelectedItems((prev) => ({ ...prev, [section]: { ...prev[section], [key]: !prev[section][key] } }));
 	};
 
-	const toggleItemSelected = (id) => {
+	const toggleItemSelected = (section, id) => {
 		setSelectedItems((prev) => {
-			const skillsMap = { ...prev.technicalSkills };
+			const itemsMap = { ...prev[section] };
 
-			if (skillsMap[id]) {
-				delete skillsMap[id];
+			if (itemsMap[id]) {
+				delete itemsMap[id];
 			} else {
-				const skill = skills.find((skill) => skill.id === id);
-				if (skill) {
-					skillsMap[id] = skill;
+				const item = cvData[section].find((item) => item.id === id);
+				if (item) {
+					itemsMap[id] = item;
 				}
 			}
-			return { ...prev, technicalSkills: skillsMap };
+			return { ...prev, [section]: itemsMap };
 		});
 	};
 
@@ -139,6 +140,12 @@ function App() {
 			<Skills
 				activeTab={activeTab}
 				skills={cvData.technicalSkills}
+				selectedItems={selectedItems}
+				toggleItemSelected={toggleItemSelected}
+			/>
+			<Languages
+				activeTab={activeTab}
+				languages={cvData.languages}
 				selectedItems={selectedItems}
 				toggleItemSelected={toggleItemSelected}
 			/>
