@@ -9,13 +9,13 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 					<CheckBoxItem
 						label={<strong>{company}</strong>}
 						checked={selectedItems?.experience?.[`${id}-company`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-company`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-company`, company)}
 					/>
 
 					<CheckBoxItem
 						label={position}
 						checked={selectedItems?.experience?.[`${id}-position`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-position`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-position`, position)}
 					/>
 				</>
 			);
@@ -37,13 +37,13 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 					<CheckBoxItem
 						label={<strong>{location}</strong>}
 						checked={selectedItems?.experience?.[`${id}-location`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-location`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-location`, location)}
 					/>
 
 					<CheckBoxItem
 						label={period}
 						checked={selectedItems?.experience?.[`${id}-period`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-period`)}
+						onChange={() => toggleCheckedItems("experience", `${id}-period`, period)}
 					/>
 				</>
 			);
@@ -68,7 +68,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 						key={key}
 						label={responsability}
 						checked={selectedItems?.experience?.[key] || false}
-						onChange={() => toggleCheckedItems("experience", key)}
+						onChange={() => toggleCheckedItems("experience", key, responsability)}
 						showBullet={true}
 					/>
 				);

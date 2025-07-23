@@ -8,13 +8,13 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 					<CheckBoxItem
 						label={<strong>{institution}</strong>}
 						checked={selectedItems?.education?.[`${id}-institution`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-institution`)}
+						onChange={() => toggleCheckedItems("education", `${id}-institution`, institution)}
 					/>
 
 					<CheckBoxItem
 						label={degree}
 						checked={selectedItems?.education?.[`${id}-degree`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-degree`)}
+						onChange={() => toggleCheckedItems("education", `${id}-degree`, degree)}
 					/>
 				</>
 			);
@@ -36,13 +36,13 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 					<CheckBoxItem
 						label={<strong>{location}</strong>}
 						checked={selectedItems?.education?.[`${id}-location`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-location`)}
+						onChange={() => toggleCheckedItems("education", `${id}-location`, location)}
 					/>
 
 					<CheckBoxItem
 						label={period}
 						checked={selectedItems?.education?.[`${id}-period`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-period`)}
+						onChange={() => toggleCheckedItems("education", `${id}-period`, period)}
 					/>
 				</>
 			);
