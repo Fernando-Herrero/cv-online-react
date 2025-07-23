@@ -50,3 +50,7 @@
 	display: flex;
 	align-items: center;
 }
+
+.experience-responsabilities li {
+	padding-bottom: var(--spacing-xs);
+}

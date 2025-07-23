@@ -68,19 +68,19 @@ Sports enthusiast, especially fitness and football.`,
 	],
 
 	technicalSkills: [
-		{ id: "skill1", name: "JavaScript (Advanced)" },
-		{ id: "skill2", name: "TypeScript (Advanced)" },
-		{ id: "skill3", name: "React (Advanced)" },
-		{ id: "skill4", name: "React Native (Advanced)" },
-		{ id: "skill5", name: "Node.js (Advanced)" },
-		{ id: "skill6", name: "Express.js (Intermediate)" },
-		{ id: "skill7", name: "Redux (Intermediate)" },
-		{ id: "skill8", name: "HTML5 (Advanced)" },
-		{ id: "skill9", name: "CSS3 (Advanced)" },
-		{ id: "skill10", name: "Git & GitHub (Advanced)" },
+		{ id: "skill1", name: "JavaScript" },
+		{ id: "skill2", name: "TypeScript" },
+		{ id: "skill3", name: "React" },
+		{ id: "skill4", name: "React Native" },
+		{ id: "skill5", name: "Node.js" },
+		{ id: "skill6", name: "Express.js" },
+		{ id: "skill7", name: "Redux" },
+		{ id: "skill8", name: "HTML5" },
+		{ id: "skill9", name: "CSS3" },
+		{ id: "skill10", name: "Git & GitHub" },
 		{ id: "skill11", name: "Hexagonal Architecture" },
-		{ id: "skill12", name: "Testing (Jest, etc.)" },
-		{ id: "skill13", name: "CI/CD (Intermediate)" },
+		{ id: "skill12", name: "Testing" },
+		{ id: "skill13", name: "CI/CD" },
 		{ id: "skill14", name: "Agile & Scrum Methodologies" },
 	],
 
@@ -104,6 +104,22 @@ function App() {
 		setSelectedItems((prev) => ({ ...prev, [section]: { ...prev[section], [key]: !prev[section][key] } }));
 	};
 
+	const toggleItemSelected = (id) => {
+		setSelectedItems((prev) => {
+			const skillsMap = { ...prev.technicalSkills };
+
+			if (skillsMap[id]) {
+				delete skillsMap[id];
+			} else {
+				const skill = skills.find((skill) => skill.id === id);
+				if (skill) {
+					skillsMap[id] = skill;
+				}
+			}
+			return { ...prev, technicalSkills: skillsMap };
+		});
+	};
+
 	return (
 		<div className="app-container">
 			<CvTabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -124,7 +140,7 @@ function App() {
 				activeTab={activeTab}
 				skills={cvData.technicalSkills}
 				selectedItems={selectedItems}
-				toggleCheckedItems={toggleCheckedItems}
+				toggleItemSelected={toggleItemSelected}
 			/>
 
 			{activeTab === "Interactive" && <ResumeButton showModal={showModal} setShowModal={setShowModal} />}
