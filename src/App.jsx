@@ -101,8 +101,18 @@ function App() {
 	});
 	const [showModal, setShowModal] = useState(false);
 
-	const toggleCheckedItems = (section, key) => {
-		setSelectedItems((prev) => ({ ...prev, [section]: { ...prev[section], [key]: !prev[section][key] } }));
+	const toggleCheckedItems = (section, key, value) => {
+		setSelectedItems((prev) => {
+			const newSection = { ...prev[section] };
+
+			if (newSection[key]) {
+				delete newSection[key];
+			} else {
+				newSection[key] = value;
+			}
+
+			return { ...prev, [section]: newSection };
+		});
 	};
 
 	const toggleItemSelected = (section, id) => {
