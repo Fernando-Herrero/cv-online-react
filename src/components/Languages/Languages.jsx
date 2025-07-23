@@ -1,29 +1,29 @@
 import { ButtonItem } from "../ButtonItem/ButtonItem";
-import "./Skills.css";
 
-export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected }) => {
+export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelected }) => {
 	const isInteractive = activeTab === "Interactive";
 
 	return (
 		<section className="section-container">
-			<h2>Skills</h2>
+			<h2>Languages</h2>
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
-					skills.map(({ name, id }) => {
-						const isSelected = id in selectedItems.technicalSkills;
+					languages.map(({ name, id, level }) => {
+						const isSelected = id in selectedItems.languages;
 
 						return (
 							<ButtonItem
 								key={id}
 								isSelected={isSelected}
 								name={name}
-								onClick={() => toggleItemSelected("technicalSkills", id)}
+								onClick={() => toggleItemSelected("languages", id)}
+								level={level}
 							/>
 						);
 					})
 				) : (
 					<ul className="items-list">
-						{skills.map(({ name, id }) => {
+						{languages.map(({ name, id }) => {
 							return <li key={id}>{name}</li>;
 						})}
 					</ul>
