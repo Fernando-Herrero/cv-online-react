@@ -7,23 +7,44 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 		Object.values(category).some((isSelected) => isSelected)
 	);
 
-	const renderExperienceAndEducation = (section) => {
+	const renderSection = (section) => {
 		const sectionData = selectedItems[section];
 
 		if (!sectionData || Object.keys(sectionData).length === 0) return;
+		let title = "";
+		if (section === "experience") title = "Professional Experience";
+		if (section === "education") title = "Education";
+		if (section === "technicalSkills") title = "Skills";
+		if (section === "languages") title = "Languages";
+
+		const isSkillsOrLanguages = section === "technicalSkills" || section === "languages";
 
 		return (
 			<section className="resume-section">
-				{section === "experience" ? <h2>Professional Experience</h2> : <h2>Education</h2>}
+				<h2>{title}</h2>
 
 				<ul>
-					{Object.entries(sectionData).map(([key, value]) => (
-						<li key={key}>{value}</li>
-					))}
+					{Object.entries(sectionData).map(([key, value]) => {
+						if (isSkillsOrLanguages) {
+							if (section === "technicalSkills") {
+								return <li key={key}>{value.name}</li>;
+							}
+							if (section === "languages") {
+								return (
+									<li key={key}>
+										{value.name}({value.level})
+									</li>
+								);
+							}
+						} else {
+							return <li key={key}>{value}</li>;
+						}
+					})}
 				</ul>
 			</section>
 		);
 	};
+
 	return (
 		<section className="show-modal-container">
 			{!hasSelectedItems && <p>There isn't any item selected</p>}
@@ -32,10 +53,16 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 					<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
 					{selectedItems.experience &&
 						Object.values(selectedItems.experience).length > 0 &&
-						renderExperienceAndEducation("experience")}
+						renderSection("experience")}
 					{selectedItems.education &&
 						Object.values(selectedItems.education).length > 0 &&
-						renderExperienceAndEducation("education")}
+						renderSection("education")}
+					{selectedItems.technicalSkills &&
+						Object.values(selectedItems.technicalSkills).length > 0 &&
+						renderSection("technicalSkills")}
+					{selectedItems.languages &&
+						Object.values(selectedItems.languages).length > 0 &&
+						renderSection("languages")}
 				</div>
 			)}
 

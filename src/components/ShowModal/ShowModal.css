@@ -18,3 +18,15 @@
 	transform: translate(-50%, -50%);
 	z-index: 1000;
 }
+
+.resume-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	font-size: var(--font-size-small);
+	padding: var(--spacing-sm);
+}
+
+.resume-section ul {
+	list-style-position: inside;
+}
