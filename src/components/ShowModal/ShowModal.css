@@ -5,8 +5,9 @@
 	justify-content: center;
 	gap: var(--spacing-sm);
 	width: 90vw;
-	height: auto;
 	max-width: 600px;
+	height: auto;
+	min-height: 300px;
 	padding: 0 12px 12px;
 	background-color: var(--bg-color);
 	border-radius: var(--border-radius);
