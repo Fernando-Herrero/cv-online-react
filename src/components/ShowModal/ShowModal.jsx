@@ -28,7 +28,7 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 		<section className="show-modal-container">
 			{!hasSelectedItems && <p>There isn't any item selected</p>}
 			{hasSelectedItems && (
-				<div>
+				<div className="show-modal-resume">
 					<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
 					{selectedItems.experience &&
 						Object.values(selectedItems.experience).length > 0 &&
@@ -38,6 +38,7 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 						renderExperienceAndEducation("education")}
 				</div>
 			)}
+
 			<ResumeButton showModal={showModal} setShowModal={setShowModal} />
 		</section>
 	);
