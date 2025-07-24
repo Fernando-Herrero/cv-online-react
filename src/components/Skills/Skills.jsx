@@ -10,7 +10,7 @@ export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected })
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
 					skills.map(({ name, id }) => {
-						const isSelected = id in selectedItems.technicalSkills;
+						const isSelected = selectedItems.technicalSkills && id in selectedItems.technicalSkills;
 
 						return (
 							<ButtonItem

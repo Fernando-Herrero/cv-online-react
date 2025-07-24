@@ -58,9 +58,9 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		);
 	};
 
-	const renderResponsabilities = (isInteractive, id, responsabilities) => {
+	const renderResponsibilities = (isInteractive, id, responsibilities) => {
 		if (isInteractive) {
-			return responsabilities.map((responsability, i) => {
+			return responsibilities.map((responsability, i) => {
 				const key = `${id}-${i}`;
 
 				return (
@@ -76,7 +76,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		}
 		return (
 			<ul>
-				{responsabilities.map((responsability, i) => {
+				{responsibilities.map((responsability, i) => {
 					const key = `${id}-${i}`;
 					return <li key={key}>{responsability}</li>;
 				})}
@@ -101,8 +101,8 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 							</div>
 						</div>
 
-						<div className={`experience-responsabilities ${isInteractive ? "interactive-mode" : ""}`}>
-							{renderResponsabilities(isInteractive, id, responsibilities)}
+						<div className={`experience-responsibilities ${isInteractive ? "interactive-mode" : ""}`}>
+							{renderResponsibilities(isInteractive, id, responsibilities)}
 						</div>
 					</div>
 				);
