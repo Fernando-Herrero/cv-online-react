@@ -111,6 +111,7 @@ function App() {
 				newSection[key] = value;
 			}
 
+			console.log("New section state:", newSection);
 			return { ...prev, [section]: newSection };
 		});
 	};
@@ -127,6 +128,7 @@ function App() {
 					itemsMap[id] = item;
 				}
 			}
+			console.log("New itemsMap state:", itemsMap);
 			return { ...prev, [section]: itemsMap };
 		});
 	};

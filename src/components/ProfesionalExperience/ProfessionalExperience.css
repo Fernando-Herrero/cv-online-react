@@ -16,7 +16,7 @@
 	gap: var(--spacing-xs);
 }
 
-.experience-responsabilities {
+.experience-responsibilities {
 	padding-left: var(--spacing-md);
 }
 
@@ -40,17 +40,17 @@
 	align-items: center;
 }
 
-.experience-responsabilities.interactive-mode {
+.experience-responsibilities.interactive-mode {
 	display: flex;
 	flex-direction: column;
 	padding-left: var(--spacing-xs);
 }
 
-.experience-responsabilities.interactive-mode label {
+.experience-responsibilities.interactive-mode label {
 	display: flex;
 	align-items: center;
 }
 
-.experience-responsabilities li {
+.experience-responsibilities li {
 	padding-bottom: var(--spacing-xs);
 }

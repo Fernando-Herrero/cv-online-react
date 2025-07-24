@@ -1,3 +1,5 @@
+import { EducationItemResume } from "../EducationItemResume/EducationItemResume";
+import { ExperienceItemResume } from "../ExperienceItemResume/ExperienceItemResume";
 import { Header } from "../Header/Header";
 import { ResumeButton } from "../ResumeButton/ResumeButton";
 import "./ShowModal.css";
@@ -10,12 +12,17 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 	const renderSection = (section) => {
 		const sectionData = selectedItems[section];
 
-		if (!sectionData || Object.keys(sectionData).length === 0) return;
-		let title = "";
-		if (section === "experience") title = "Professional Experience";
-		if (section === "education") title = "Education";
-		if (section === "technicalSkills") title = "Skills";
-		if (section === "languages") title = "Languages";
+		if (!sectionData || Object.keys(sectionData).length === 0) return null;
+
+		const valuesSelection = Object.values(sectionData);
+
+		const titles = {
+			experience: "Professional Experience",
+			education: "Education",
+			technicalSkills: "Skills",
+			languages: "Languages",
+		};
+		const title = titles[section];
 
 		const isSkillsOrLanguages = section === "technicalSkills" || section === "languages";
 
@@ -23,24 +30,39 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 			<section className="resume-section">
 				<h2>{title}</h2>
 
-				<ul>
-					{Object.entries(sectionData).map(([key, value]) => {
-						if (isSkillsOrLanguages) {
+				{section === "experience" && (
+					<>
+						{cvData.experience.map((item) => (
+							<ExperienceItemResume key={item.id} data={item} valuesSelection={valuesSelection} />
+						))}
+					</>
+				)}
+
+				{section === "education" && (
+					<>
+						{cvData.education.map((item) => (
+							<EducationItemResume key={item.id} data={item} valuesSelection={valuesSelection} />
+						))}
+					</>
+				)}
+
+				{isSkillsOrLanguages && (
+					<div>
+						{Object.entries(sectionData).map(([key, value]) => {
 							if (section === "technicalSkills") {
-								return <li key={key}>{value.name}</li>;
+								return <p key={key}>{value.name}</p>;
 							}
 							if (section === "languages") {
 								return (
-									<li key={key}>
+									<p key={key}>
 										{value.name}({value.level})
-									</li>
+									</p>
 								);
 							}
-						} else {
-							return <li key={key}>{value}</li>;
-						}
-					})}
-				</ul>
+							return null;
+						})}
+					</div>
+				)}
 			</section>
 		);
 	};
