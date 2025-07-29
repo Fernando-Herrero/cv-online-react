@@ -8,7 +8,7 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelec
 			<h2>Languages</h2>
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
-					languages.map(({ name, id, level }) => {
+					languages.map(({ name, id, level, flag }) => {
 						const isSelected = id in selectedItems.languages;
 
 						return (
@@ -18,13 +18,14 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelec
 								name={name}
 								onClick={() => toggleItemSelected("languages", id)}
 								level={level}
+								flag={flag}
 							/>
 						);
 					})
 				) : (
 					<ul className="items-list">
-						{languages.map(({ name, id }) => {
-							return <li key={id}>{name}</li>;
+						{languages.map(({ name, id, level, flag }) => {
+							return <li key={id}>{name}({level}){flag}</li>;
 						})}
 					</ul>
 				)}

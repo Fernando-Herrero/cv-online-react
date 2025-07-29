@@ -1,8 +1,17 @@
 .button-item {
-	width: fit-content;
-	padding: var(--spacing-xs);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-sm);
+	max-width: 120px;
+	min-width: 100px;
+	min-height: 68px;
 	border-radius: var(--border-radius);
 	background-color: var(--bg-color);
+	border: none;
+	box-shadow: var(--box-shadow);
 }
 
 .button-item.selected {
@@ -17,4 +26,8 @@
 .button-item:hover {
 	background-color: var(--color-hover);
 	transform: translateY(-1px);
+}
+
+.icon {
+	flex-shrink: 0;
 }

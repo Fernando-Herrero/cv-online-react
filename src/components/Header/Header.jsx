@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./Header.css";
+import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
+import { MdLocationOn } from "react-icons/md";
+import { FaLaptopCode } from "react-icons/fa";
 
 export const Header = ({ activeTab, personalInfo, summary }) => {
-	const { fullName, title, location, email, phone, linkedin, github } = personalInfo;
+	const { fullName, title, location, email, linkedin, github } = personalInfo;
 	const [hideSummary, setHideSummary] = useState(false);
 
 	const onClickSummary = () => {
@@ -11,19 +14,29 @@ export const Header = ({ activeTab, personalInfo, summary }) => {
 
 	return (
 		<section className="section-container">
-			<div className="header-name-content">
+			<div className="header-content">
 				<h1 className="header-name">{fullName}</h1>
 
-				<div className="header-content">
-					<p>{title}</p>
-					<p>{location}</p>
-					<a href={`tel:${phone}`}>+{phone}</a>
-					<a href={`mailto:${email}`}>{email}</a>
+				<div className="header-text-anc">
+					<p className="header-text">
+						<FaLaptopCode size={18} />
+						<strong>{title}</strong>
+					</p>
+					<p className="header-text">
+						<MdLocationOn size={18} className="icon-location" />
+						{location}
+					</p>
+				</div>
+
+				<div className="header-text-anc">
+					<a href={`mailto:${email}`}>
+						<SiGmail size={18} color="#D14836" />
+					</a>
 					<a href={linkedin} target="_blank">
-						Linkedin
+						<SiLinkedin size={18} color="#0A66C2" />
 					</a>
 					<a href={github} target="_blank">
-						Github
+						<SiGithub size={18} color="#181717" />
 					</a>
 				</div>
 			</div>

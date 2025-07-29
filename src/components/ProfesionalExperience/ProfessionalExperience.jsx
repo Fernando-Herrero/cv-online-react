@@ -61,7 +61,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 	const renderResponsibilities = (isInteractive, id, responsibilities) => {
 		if (isInteractive) {
 			return responsibilities.map((responsability, i) => {
-				const key = `${id}-${i}`;
+				const key = `${id}-responsability-${i}`;
 
 				return (
 					<CheckBoxItem
@@ -77,7 +77,7 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		return (
 			<ul>
 				{responsibilities.map((responsability, i) => {
-					const key = `${id}-${i}`;
+					const key = `${id}-responsability-${i}`;
 					return <li key={key}>{responsability}</li>;
 				})}
 			</ul>

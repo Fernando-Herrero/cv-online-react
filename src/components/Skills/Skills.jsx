@@ -9,7 +9,7 @@ export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected })
 			<h2>Skills</h2>
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
-					skills.map(({ name, id }) => {
+					skills.map(({ name, id, icon: Icon, color }) => {
 						const isSelected = selectedItems.technicalSkills && id in selectedItems.technicalSkills;
 
 						return (
@@ -18,14 +18,19 @@ export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected })
 								isSelected={isSelected}
 								name={name}
 								onClick={() => toggleItemSelected("technicalSkills", id)}
+								icon={Icon}
+								color={color}
 							/>
 						);
 					})
 				) : (
 					<ul className="items-list">
-						{skills.map(({ name, id }) => {
-							return <li key={id}>{name}</li>;
-						})}
+						{skills.map(({ name, id, icon: Icon, color }) => (
+							<li key={id}>
+								{Icon && <Icon size={18} color={color} />}
+								<span>{name}</span>
+							</li>
+						))}
 					</ul>
 				)}
 			</div>
