@@ -1,4 +1,4 @@
 export const TABS = {
-	SIMPLE: "Simple",
+	TRADITIONAL: "Traditional",
 	INTERACTIVE: "Interactive",
 };

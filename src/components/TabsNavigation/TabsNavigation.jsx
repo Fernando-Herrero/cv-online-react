@@ -1,7 +1,7 @@
-import "./CvTbasNavigation.css";
+import "./TabsNavigation.css";
 import { TABS } from "./Tabs";
 
-export const CvTabsNavigation = ({ activeTab, setActiveTab }) => {
+export const TabsNavigation = ({ activeTab, setActiveTab }) => {
 	return (
 		<nav className="nav-tabs">
 			{Object.entries(TABS).map(([property, value]) => (

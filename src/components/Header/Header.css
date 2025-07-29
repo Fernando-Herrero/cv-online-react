@@ -1,4 +1,4 @@
-.header-name-content {
+.header-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,28 +13,30 @@
 
 .header-name {
 	font-size: var(--font-size-title);
+	background: linear-gradient(to right, #444242, #c2c2c2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
 }
 
-.header-content {
-	display: grid;
-	justify-items: center;
-	grid-template-columns: repeat(2, 1fr);
+.header-text-anc {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.header-text {
+	display: flex;
+	align-items: center;
 	gap: var(--spacing-xs);
-	font-size: var(--font-size-small);
-	padding: var(--spacing-xs);
 }
 
-.header-content a {
+.icon-location {
 	color: var(--accent-color);
-	position: relative;
-	text-decoration: none;
 }
 
-.header-content a:hover {
-	color: var(--accent-hover);
-}
-
-.header-content a::after {
+.header-text-anc a::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -43,6 +45,14 @@
 	height: 1px;
 	background-color: var(--accent-color);
 	transition: width 0.3s ease;
+}
+
+.header-text-anc a {
+	position: relative;
+}
+
+.header-text-anc a:hover {
+	transform: scale(1.10);
 }
 
 .header-content a:hover::after {
