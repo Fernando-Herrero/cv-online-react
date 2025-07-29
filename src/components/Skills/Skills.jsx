@@ -6,7 +6,7 @@ export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected })
 
 	return (
 		<section className="section-container">
-			<h2>Skills</h2>
+			<h2>🛠️ Skills</h2>
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
 					skills.map(({ name, id, icon: Icon, color }) => {

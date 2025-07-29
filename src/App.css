@@ -38,10 +38,10 @@ a {
 }
 
 :root {
-	--bg-color: #ffffff;
-	--section-bg: #f9f9f9;
-	--line-color: #e0e0e0;
-	--color-hover: rgb(214, 214, 214);
+	--bg-color: #fff;
+	--section-bg: #f1f1f1db;
+	--line-color: #414141b0;
+	--color-hover: #d4d6d8;
 
 	--text-color: #222222;
 	--text-secondary: #555555;
@@ -82,7 +82,6 @@ h2 {
 	font-size: var(--font-size-large);
 	border-bottom: 1px solid var(--text-color);
 	width: 100%;
-	background-color: var(--section-bg);
 	padding-top: var(--spacing-xs);
 	padding-left: var(--spacing-xs);
 	border-radius: var(--border-radius);

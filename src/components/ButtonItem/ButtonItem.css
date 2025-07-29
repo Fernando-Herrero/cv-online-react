@@ -9,9 +9,10 @@
 	min-width: 100px;
 	min-height: 68px;
 	border-radius: var(--border-radius);
-	background-color: var(--bg-color);
 	border: none;
 	box-shadow: var(--box-shadow);
+	background: linear-gradient(to bottom right, var(--bg-color) 0%, var(--section-bg) 40%, var(--line-color) 100%);
+	transition: 0.2s ease;
 }
 
 .button-item.selected {

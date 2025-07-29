@@ -20,13 +20,13 @@
 	padding: var(--spacing-sm);
 	box-shadow: var(--box-shadow);
 	background-color: var(--bg-color);
+	background: linear-gradient(to bottom right, var(--bg-color) 0%, var(--section-bg) 40%, var(--line-color) 100%);
 }
 
 .items-content {
 	margin-top: var(--spacing-md);
-	padding: var(--spacing-xs);
+	padding: var(--spacing-sm);
 	font-size: var(--font-size-small);
-	background-color: var(--section-bg);
 	border-radius: var(--border-radius);
 	width: 100%;
 }

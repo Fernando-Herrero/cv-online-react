@@ -4,7 +4,6 @@
 	align-items: center;
 	width: 100%;
 	gap: var(--spacing-md);
-	background-color: var(--section-bg);
 	border-radius: var(--border-radius);
 	padding-top: var(--spacing-md);
 	padding-bottom: var(--spacing-md);
@@ -13,7 +12,7 @@
 
 .header-name {
 	font-size: var(--font-size-title);
-	background: linear-gradient(to right, #444242, #c2c2c2);
+	background: linear-gradient(to right, #414141, #b1b0b0);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -52,7 +51,7 @@
 }
 
 .header-text-anc a:hover {
-	transform: scale(1.10);
+	transform: scale(1.1);
 }
 
 .header-content a:hover::after {

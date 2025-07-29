@@ -1,4 +1,5 @@
 import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem";
+import { FaBrain } from "react-icons/fa";
 
 export const Education = ({ activeTab, education, selectedItems, toggleCheckedItems }) => {
 	const renderInstitutionAndDegree = (isInteractive, id, institution, degree) => {
@@ -59,7 +60,7 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 
 	return (
 		<section className="section-container">
-			<h2>Education</h2>
+			<h2>🧠 Education</h2>
 			{education.map(({ institution, degree, period, location, id }) => {
 				const isInteractive = activeTab === "Interactive";
 

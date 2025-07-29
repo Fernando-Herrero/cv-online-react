@@ -5,7 +5,7 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelec
 
 	return (
 		<section className="section-container">
-			<h2>Languages</h2>
+			<h2>🌍 Languages</h2>
 			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
 					languages.map(({ name, id, level, flag }) => {
