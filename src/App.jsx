@@ -22,6 +22,7 @@ import {
 	SiFigma,
 } from "react-icons/si";
 import { FaCubes, FaRocket, FaCheckCircle, FaRegLightbulb, FaTachometerAlt } from "react-icons/fa";
+import { DarkTheme } from "./components/DarkTheme/DarkTheme";
 
 const cvData = {
 	personalInfo: {
@@ -153,6 +154,9 @@ function App() {
 
 	return (
 		<div className="app-container">
+			<div className="dark-theme-container-app">
+				<DarkTheme />
+			</div>
 			<TabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
 			<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
 			<ProfessionalExperience
