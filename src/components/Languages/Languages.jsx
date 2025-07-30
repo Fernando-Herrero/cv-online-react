@@ -25,7 +25,15 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelec
 				) : (
 					<ul className="items-list">
 						{languages.map(({ name, id, level, flag }) => {
-							return <li key={id}>{name}({level}){flag}</li>;
+							return (
+								<li key={id}>
+									<div>
+										{name}
+										{flag}
+									</div>
+									<span>({level})</span>
+								</li>
+							);
 						})}
 					</ul>
 				)}

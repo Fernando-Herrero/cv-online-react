@@ -15,9 +15,19 @@
 	transition: 0.2s ease;
 }
 
+body.dark-theme .button-item {
+	background: linear-gradient(135deg, rgba(106, 237, 138, 0.5) 0%, var(--section-bg) 55%, var(--bg-color) 95%);
+	color: var(--text-color);
+}
+
 .button-item.selected {
 	background-color: var(--accent-color);
 	color: var(--bg-color);
+}
+
+body.dark-theme .button-item.selected {
+	background-color: #7fa58e;
+	color: var(--accent-hover);
 }
 
 .button-item.selected:hover {

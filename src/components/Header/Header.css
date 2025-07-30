@@ -19,6 +19,15 @@
 	color: transparent;
 }
 
+body.dark-theme .header-name {
+	font-size: var(--font-size-title);
+	background: linear-gradient(to right, #6aed8a, #cfcfcf);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
 .header-text-anc {
 	display: flex;
 	align-items: center;
@@ -53,6 +62,20 @@
 .header-text-anc a:hover {
 	transform: scale(1.1);
 }
+
+body.dark-theme .header-text-anc a {
+	box-shadow: var(--box-shadow);
+	background-color: var(--accent-color);
+	padding: var(--spacing-xs);
+	line-height: 1;
+	border-radius: var(--border-radius);
+}
+
+
+body.dark-theme .header-text-anc a:hover {
+	background-color: var(--accent-hover);
+}
+
 
 .header-content a:hover::after {
 	width: 100%;

@@ -1,5 +1,6 @@
 .tab {
 	background-color: var(--bg-color);
+	color: var(--text-color);
 	border: 1px solid var(--line-color);
 	border-bottom: none;
 	padding: var(--spacing-sm);
@@ -11,7 +12,8 @@
 }
 
 .tab.active {
-	transform: scale(1.2);
+	transform-origin: left center;
+	transform: scale(1.2, 1.2);
 }
 
 .tab:hover {

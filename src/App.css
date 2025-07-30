@@ -69,6 +69,22 @@ a {
 	--box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.dark-theme {
+	--bg-color: #0a0a0a;
+	--section-bg: rgba(50, 80, 50, 0.3);
+	--line-color: #444;
+	--color-hover: #333333;
+
+	--text-color: #ffffff;
+	--text-secondary: #c0c0c0;
+	--text-light: #888888;
+
+	--accent-color: #6aed8a;
+	--accent-hover: #047724;
+
+	--box-shadow: 0 2px 6px rgba(106, 237, 138, 0.5);
+}
+
 .app-container {
 	width: var(--container-width);
 	margin: 0 auto;
@@ -76,6 +92,23 @@ a {
 	padding-bottom: var(--spacing-sm);
 	margin-bottom: var(--spacing-sm);
 	position: relative;
+}
+
+body.dark-theme {
+	background-color: var(--bg-color);
+}
+
+body.dark-theme .app-container {
+	background: radial-gradient(ellipse at 20% 20%, var(--bg-color) 0%, #000000 70%),
+		radial-gradient(ellipse at 80% 80%, #142b15 0%, transparent 50%);
+	background-blend-mode: screen;
+	color: var(--text-color);
+}
+
+.dark-theme-container-app {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 }
 
 h2 {
