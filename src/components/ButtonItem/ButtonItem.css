@@ -5,7 +5,6 @@
 	justify-content: center;
 	gap: var(--spacing-xs);
 	padding: var(--spacing-sm);
-	max-width: 120px;
 	min-width: 100px;
 	min-height: 68px;
 	border-radius: var(--border-radius);
