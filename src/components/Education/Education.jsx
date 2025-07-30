@@ -1,82 +1,56 @@
-import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem";
-import { FaBrain } from "react-icons/fa";
+import "./ExperienceEducation.css";
 
 export const Education = ({ activeTab, education, selectedItems, toggleCheckedItems }) => {
-	const renderInstitutionAndDegree = (isInteractive, id, institution, degree) => {
-		if (isInteractive) {
-			return (
-				<>
-					<CheckBoxItem
-						label={<strong>{institution}</strong>}
-						checked={selectedItems?.education?.[`${id}-institution`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-institution`, institution)}
-					/>
-
-					<CheckBoxItem
-						label={degree}
-						checked={selectedItems?.education?.[`${id}-degree`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-degree`, degree)}
-					/>
-				</>
-			);
-		}
-		return (
-			<>
-				<p>
-					<strong>{institution}</strong>
-				</p>
-				<p>{degree}</p>
-			</>
-		);
-	};
-
-	const renderLocationAndPeriod = (isInteractive, id, location, period) => {
-		if (isInteractive) {
-			return (
-				<>
-					<CheckBoxItem
-						label={<strong>{location}</strong>}
-						checked={selectedItems?.education?.[`${id}-location`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-location`, location)}
-					/>
-
-					<CheckBoxItem
-						label={period}
-						checked={selectedItems?.education?.[`${id}-period`] || false}
-						onChange={() => toggleCheckedItems("education", `${id}-period`, period)}
-					/>
-				</>
-			);
-		}
-		return (
-			<>
-				<p>
-					<strong>{location}</strong>
-				</p>
-				<p>{period}</p>
-			</>
-		);
-	};
+	const isInteractive = activeTab === "Interactive";
 
 	return (
 		<section className="section-container">
 			<h2>🧠 Education</h2>
-			{education.map(({ institution, degree, period, location, id }) => {
-				const isInteractive = activeTab === "Interactive";
+			{education.map(({ id, institution, degree, location, period }) => (
+				<div key={id} className={`item-content ${isInteractive ? "interactive-mode" : ""}`}>
+					{isInteractive ? (
+						<label className="item-checked-wrapper">
+							<input
+								type="checkbox"
+								checked={!!selectedItems?.education?.[id]}
+								onChange={() => toggleCheckedItems("education", id)}
+							/>
 
-				return (
-					<div key={id} className="item-content">
-						<div className="item-header">
-							<div className={`item-title-group ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderInstitutionAndDegree(isInteractive, id, institution, degree)}
+							<div className="item-details">
+								<div className="item-title-group">
+									<p>
+										<strong>{institution}</strong>
+									</p>
+									<p>{degree}</p>
+								</div>
+
+								<div className="item-subtitle-group">
+									<p>
+										<strong>{location}</strong>
+									</p>
+									<p>{period}</p>
+								</div>
 							</div>
-							<div className={`item-subtitle-group ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderLocationAndPeriod(isInteractive, id, location, period)}
+						</label>
+					) : (
+						<div className="item-details">
+							<div className="item-title-group">
+								<p>
+									<strong>{institution}</strong>
+								</p>
+								<p>{degree}</p>
+							</div>
+
+							<div className="item-subtitle-group">
+								<p>
+									<strong>{location}</strong>
+								</p>
+								<p>{period}</p>
 							</div>
 						</div>
-					</div>
-				);
-			})}
+					)}
+				</div>
+			))}
 		</section>
 	);
 };

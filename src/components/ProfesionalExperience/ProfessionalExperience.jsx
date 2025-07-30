@@ -1,113 +1,74 @@
-import "./ProfessionalExperience.css";
-import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem.jsx";
+import "./ExperienceEducation.css";
 
 export const ProfessionalExperience = ({ activeTab, experience, selectedItems, toggleCheckedItems }) => {
-	const renderCompanyAndPosition = (isInteractive, id, company, position) => {
-		if (isInteractive) {
-			return (
-				<>
-					<CheckBoxItem
-						label={<strong>{company}</strong>}
-						checked={selectedItems?.experience?.[`${id}-company`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-company`, company)}
-					/>
-
-					<CheckBoxItem
-						label={position}
-						checked={selectedItems?.experience?.[`${id}-position`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-position`, position)}
-					/>
-				</>
-			);
-		}
-		return (
-			<>
-									<p>
-										<strong>{company}</strong>
-									</p>
-									<p>{position}</p>
-			</>
-		);
-	};
-
-	const renderLocationAndPeriod = (isInteractive, id, location, period) => {
-		if (isInteractive) {
-			return (
-				<>
-					<CheckBoxItem
-						label={<strong>{location}</strong>}
-						checked={selectedItems?.experience?.[`${id}-location`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-location`, location)}
-					/>
-
-					<CheckBoxItem
-						label={period}
-						checked={selectedItems?.experience?.[`${id}-period`] || false}
-						onChange={() => toggleCheckedItems("experience", `${id}-period`, period)}
-					/>
-				</>
-			);
-		}
-		return (
-			<>
-									<p>
-										<strong>{location}</strong>
-									</p>
-									<p>{period}</p>
-			</>
-		);
-	};
-
-	const renderResponsibilities = (isInteractive, id, responsibilities) => {
-		if (isInteractive) {
-			return responsibilities.map((responsability, i) => {
-				const key = `${id}-responsability-${i}`;
-
-				return (
-					<CheckBoxItem
-						key={key}
-						label={responsability}
-						checked={selectedItems?.experience?.[key] || false}
-						onChange={() => toggleCheckedItems("experience", key, responsability)}
-						showBullet={true}
-					/>
-				);
-			});
-		}
-		return (
-			<ul>
-				{responsibilities.map((responsability, i) => {
-					const key = `${id}-responsability-${i}`;
-					return <li key={key}>{responsability}</li>;
-									})}
-								</ul>
-		);
-	};
+	const isInteractive = activeTab === "Interactive";
 
 	return (
 		<section className="section-container">
 			<h2>💼 Professional Experience</h2>
+			{experience.map(({ id, image, company, position, location, period, responsabilities }) => (
+				<div key={id} className={`item-content ${isInteractive ? "interactive-mode" : ""}`}>
+					{isInteractive ? (
+						<label className="item-checked-wrapper">
+							<input
+								type="checkbox"
+								checked={!!selectedItems?.experience?.[id]}
+								onChange={() => toggleCheckedItems("experience", id)}
+							/>
 
-			{experience.map(({ position, company, period, location, responsibilities, id }) => {
-				const isInteractive = activeTab === "Interactive";
+							<div className="item-details">
+								<div className="item-title-group">
+									<span>
+										{image}
+										<p>
+											<strong>{company}</strong>
+										</p>
+									</span>
+									<p>{position}</p>
+								</div>
 
-				return (
-					<div key={id} className="item-content">
-						<div className="item-header">
-							<div className={`item-title-group ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderCompanyAndPosition(isInteractive, id, company, position)}
+								<div className="item-subtitle-group">
+									<p>
+										<strong>{location}</strong>
+									</p>
+									<p>{period}</p>
+								</div>
+
+								<ul className="experience-responsabilities">
+									{responsabilities.map((res, i) => (
+										<li key={`${id}-${i}`}>{res}</li>
+									))}
+								</ul>
 							</div>
-							<div className={`item-subtitle-group ${isInteractive ? "interactive-mode" : ""}`}>
-								{renderLocationAndPeriod(isInteractive, id, location, period)}
-							</div>
+						</label>
+					) : (
+						<div className="item-details">
+							<div className="item-title-group">
+								<span>
+									{image}
+									<p>
+										<strong>{company}</strong>
+									</p>
+								</span>
+								<p>{position}</p>
 							</div>
 
-						<div className={`experience-responsibilities ${isInteractive ? "interactive-mode" : ""}`}>
-							{renderResponsibilities(isInteractive, id, responsibilities)}
+							<div className="item-subtitle-group">
+								<p>
+									<strong>{location}</strong>
+								</p>
+								<p>{period}</p>
+							</div>
+
+							<ul className="experience-responsabilities">
+								{responsabilities.map((res, i) => (
+									<li key={`${id}-${i}`}>{res}</li>
+								))}
+							</ul>
 						</div>
+					)}
 				</div>
-			);
-			})}
+			))}
 		</section>
 	);
 };
