@@ -1,9 +1,0 @@
-.custom-bullet {
-	flex-shrink: 0;
-	align-self: center;
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	background-color: black;
-	margin-right: var(--spacing-xs);
-}
