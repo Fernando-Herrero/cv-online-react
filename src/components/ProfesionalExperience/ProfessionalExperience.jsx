@@ -22,10 +22,10 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		}
 		return (
 			<>
-				<p>
-					<strong>{company}</strong>
-				</p>
-				<p>{position}</p>
+									<p>
+										<strong>{company}</strong>
+									</p>
+									<p>{position}</p>
 			</>
 		);
 	};
@@ -50,10 +50,10 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 		}
 		return (
 			<>
-				<p>
-					<strong>{location}</strong>
-				</p>
-				<p>{period}</p>
+									<p>
+										<strong>{location}</strong>
+									</p>
+									<p>{period}</p>
 			</>
 		);
 	};
@@ -79,8 +79,8 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 				{responsibilities.map((responsability, i) => {
 					const key = `${id}-responsability-${i}`;
 					return <li key={key}>{responsability}</li>;
-				})}
-			</ul>
+									})}
+								</ul>
 		);
 	};
 
@@ -100,13 +100,13 @@ export const ProfessionalExperience = ({ activeTab, experience, selectedItems, t
 							<div className={`item-subtitle-group ${isInteractive ? "interactive-mode" : ""}`}>
 								{renderLocationAndPeriod(isInteractive, id, location, period)}
 							</div>
-						</div>
+							</div>
 
 						<div className={`experience-responsibilities ${isInteractive ? "interactive-mode" : ""}`}>
 							{renderResponsibilities(isInteractive, id, responsibilities)}
 						</div>
-					</div>
-				);
+				</div>
+			);
 			})}
 		</section>
 	);
