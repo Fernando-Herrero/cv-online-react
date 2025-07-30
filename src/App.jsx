@@ -23,6 +23,8 @@ import {
 } from "react-icons/si";
 import { FaCubes, FaRocket, FaCheckCircle, FaRegLightbulb, FaTachometerAlt } from "react-icons/fa";
 import { DarkTheme } from "./components/DarkTheme/DarkTheme";
+import rocketLogo from "./assets/Rocket-logo.png";
+import archiesLogo from "./assets/archies.png";
 
 const cvData = {
 	personalInfo: {
@@ -42,6 +44,7 @@ Sports enthusiast, especially fitness and football.`,
 	experience: [
 		{
 			id: "exp1",
+			image: rocketLogo,
 			position: "Frontend Developer",
 			company: "Rocket418",
 			period: "Mar 2024 - Present",
@@ -54,6 +57,7 @@ Sports enthusiast, especially fitness and football.`,
 		},
 		{
 			id: "exp2",
+			image: archiesLogo,
 			position: "Kitchen Manager",
 			company: "Archie's",
 			period: "Jan 2019 - Dec 2023",

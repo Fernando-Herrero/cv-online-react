@@ -1,6 +1,5 @@
 import "./ProfessionalExperience.css";
 import { CheckBoxItem } from "../CheckBoxItem/CheckBoxItem.jsx";
-import { HiOutlineBriefcase } from "react-icons/hi";
 
 export const ProfessionalExperience = ({ activeTab, experience, selectedItems, toggleCheckedItems }) => {
 	const renderCompanyAndPosition = (isInteractive, id, company, position) => {
