@@ -1,5 +1,3 @@
-import "./ExperienceEducation.css";
-
 export const Education = ({ activeTab, education, selectedItems, toggleCheckedItems }) => {
 	const isInteractive = activeTab === "Interactive";
 
@@ -7,7 +5,7 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 		<section className="section-container">
 			<h2>🧠 Education</h2>
 			{education.map(({ id, institution, degree, location, period }) => (
-				<div key={id} className={`item-content ${isInteractive ? "interactive-mode" : ""}`}>
+				<div key={id} className="item-content">
 					{isInteractive ? (
 						<label className="item-checked-wrapper">
 							<input
@@ -24,7 +22,7 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 									<p>{degree}</p>
 								</div>
 
-								<div className="item-subtitle-group">
+								<div className="item-title-group">
 									<p>
 										<strong>{location}</strong>
 									</p>
@@ -41,7 +39,7 @@ export const Education = ({ activeTab, education, selectedItems, toggleCheckedIt
 								<p>{degree}</p>
 							</div>
 
-							<div className="item-subtitle-group">
+							<div className="item-title-group">
 								<p>
 									<strong>{location}</strong>
 								</p>

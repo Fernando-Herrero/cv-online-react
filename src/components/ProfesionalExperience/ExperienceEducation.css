@@ -10,47 +10,39 @@
 	width: 100%;
 }
 
-.item-header {
+.item-checked-wrapper {
+	display: flex;
+	gap: var(--spacing-xs);
+}
+
+.item-details {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.item-title-group {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xs);
 }
 
-.experience-responsibilities {
+.item-logo-title {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.item-logo-title img {
+	width: 22px;
+	height: 22px;
+	border: 1px solid var(--accent-color);
+}
+
+.experience-responsabilities {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	list-style-position: inside;
 	padding-left: var(--spacing-md);
-}
-
-.item-title-group.interactive-mode {
-	display: flex;
-	flex-direction: column;
-}
-
-.item-title-group.interactive-mode label {
-	display: flex;
-	align-items: center;
-}
-
-.item-subtitle-group.interactive-mode {
-	display: flex;
-	flex-direction: column;
-}
-
-.item-subtitle-group.interactive-mode label {
-	display: flex;
-	align-items: center;
-}
-
-.experience-responsibilities.interactive-mode {
-	display: flex;
-	flex-direction: column;
-	padding-left: var(--spacing-xs);
-}
-
-.experience-responsibilities.interactive-mode label {
-	display: flex;
-	align-items: center;
-}
-
-.experience-responsibilities li {
-	padding-bottom: var(--spacing-xs);
 }
