@@ -9,19 +9,22 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 	);
 
 	return (
-		<section className="show-modal-container">
-			{!hasSelectedItems && <p>There isn't any item selected</p>}
-			{hasSelectedItems && (
-				<div className="show-modal-resume">
-					<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
-					{<ResumeSection section="experience" selectedItems={selectedItems} cvData={cvData} />}
-					{<ResumeSection section="education" selectedItems={selectedItems} cvData={cvData} />}
-					{<ResumeSection section="technicalSkills" selectedItems={selectedItems} cvData={cvData} />}
-					{<ResumeSection section="languages" selectedItems={selectedItems} cvData={cvData} />}
-				</div>
-			)}
+		<>
+			<div className="overlay"></div>
+			<section className="show-modal-container">
+				{!hasSelectedItems && <p>There isn't any item selected</p>}
+				{hasSelectedItems && (
+					<div className="show-modal-resume">
+						<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />
+						{<ResumeSection section="experience" selectedItems={selectedItems} cvData={cvData} />}
+						{<ResumeSection section="education" selectedItems={selectedItems} cvData={cvData} />}
+						{<ResumeSection section="technicalSkills" selectedItems={selectedItems} cvData={cvData} />}
+						{<ResumeSection section="languages" selectedItems={selectedItems} cvData={cvData} />}
+					</div>
+				)}
 
-			<ResumeButton showModal={showModal} setShowModal={setShowModal} />
-		</section>
+				<ResumeButton showModal={showModal} setShowModal={setShowModal} />
+			</section>
+		</>
 	);
 };

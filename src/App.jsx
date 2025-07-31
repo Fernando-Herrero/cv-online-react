@@ -199,16 +199,13 @@ function App() {
 
 			{activeTab === "Interactive" && <ResumeButton showModal={showModal} setShowModal={setShowModal} />}
 			{showModal && (
-				<>
-					<div className="overlay"></div>
-					<ShowModal
-						showModal={showModal}
-						setShowModal={setShowModal}
-						selectedItems={selectedItems}
-						activeTab={activeTab}
-						cvData={cvData}
-					/>
-				</>
+				<ShowModal
+					showModal={showModal}
+					setShowModal={setShowModal}
+					selectedItems={selectedItems}
+					activeTab={activeTab}
+					cvData={cvData}
+				/>
 			)}
 		</div>
 	);
