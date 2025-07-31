@@ -1,0 +1,19 @@
+.tab {
+	background-color: var(--bg-color);
+	border: 1px solid var(--line-color);
+	border-bottom: none;
+	padding: var(--spacing-sm);
+	box-shadow: var(--box-shadow);
+	margin-top: var(--spacing-xs);
+	border-top-left-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+	transition: all 0.2s ease;
+}
+
+.tab.active {
+	transform: scale(1.2);
+}
+
+.tab:hover {
+	background-color: var(--color-hover);
+}

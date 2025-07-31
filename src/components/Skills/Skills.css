@@ -1,0 +1,23 @@
+.items-list {
+	list-style-position: inside;
+}
+
+.items-list li {
+	padding-bottom: var(--spacing-xs);
+}
+
+.items-content {
+	gap: var(--spacing-xs);
+	margin-top: var(--spacing-md);
+	padding: var(--spacing-xs);
+	font-size: var(--font-size-small);
+	background-color: var(--section-bg);
+	border-radius: var(--border-radius);
+	width: 100%;
+}
+
+.items-content.interactive-mode {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}

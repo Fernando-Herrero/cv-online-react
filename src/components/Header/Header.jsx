@@ -1,0 +1,42 @@
+import { useState } from "react";
+import "./Header.css";
+
+export const Header = ({ activeTab, personalInfo, summary }) => {
+	const { fullName, title, location, email, phone, linkedin, github } = personalInfo;
+	const [hideSummary, setHideSummary] = useState(false);
+
+	const onClickSummary = () => {
+		setHideSummary((prev) => !prev);
+	};
+
+	return (
+		<section className="section-container">
+			<div className="header-name-content">
+				<h1 className="header-name">{fullName}</h1>
+
+				<div className="header-content">
+					<p>{title}</p>
+					<p>{location}</p>
+					<a href={`tel:${phone}`}>+{phone}</a>
+					<a href={`mailto:${email}`}>{email}</a>
+					<a href={linkedin} target="_blank">
+						Linkedin
+					</a>
+					<a href={github} target="_blank">
+						Github
+					</a>
+				</div>
+			</div>
+
+			<button className={`summary-btn ${activeTab !== "Interactive" ? "hide" : ""}`} onClick={onClickSummary}>
+				{hideSummary ? "Show summary" : "Hide summary"}
+			</button>
+
+			{!hideSummary && (
+				<div className="header-summary">
+					<p className="summary-text">{summary}</p>
+				</div>
+			)}
+		</section>
+	);
+};
