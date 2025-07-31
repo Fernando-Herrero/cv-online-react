@@ -1,7 +1,7 @@
 import { ButtonItem } from "../ButtonItem/ButtonItem";
 import "./Skills.css";
 
-export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected }) => {
+export const Skills = ({ activeTab, skills, selectedItems, toggleItems }) => {
 	const isInteractive = activeTab === "Interactive";
 
 	return (
@@ -17,7 +17,7 @@ export const Skills = ({ activeTab, skills, selectedItems, toggleItemSelected })
 								key={id}
 								isSelected={isSelected}
 								name={name}
-								onClick={() => toggleItemSelected("technicalSkills", id)}
+								onClick={() => toggleItems("technicalSkills", id)}
 								icon={Icon}
 								color={color}
 							/>

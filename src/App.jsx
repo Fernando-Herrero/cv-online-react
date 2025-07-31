@@ -129,7 +129,7 @@ function App() {
 	});
 	const [showModal, setShowModal] = useState(false);
 
-	const toggleCheckedItems = (section, id) => {
+	const toggleItems = (section, id) => {
 		setSelectedItems((prev) => {
 			const newSection = { ...prev[section] };
 
@@ -148,23 +148,6 @@ function App() {
 		});
 	};
 
-	const toggleItemSelected = (section, id) => {
-		setSelectedItems((prev) => {
-			const itemsMap = { ...prev[section] };
-
-			if (itemsMap[id]) {
-				delete itemsMap[id];
-			} else {
-				const item = cvData[section].find((item) => item.id === id);
-				if (item) {
-					itemsMap[id] = item;
-				}
-			}
-			console.log("New itemsMap state:", itemsMap);
-			return { ...prev, [section]: itemsMap };
-		});
-	};
-
 	return (
 		<div className="app-container">
 			<div className="dark-theme-container-app">
@@ -176,25 +159,25 @@ function App() {
 				activeTab={activeTab}
 				experience={cvData.experience}
 				selectedItems={selectedItems}
-				toggleCheckedItems={toggleCheckedItems}
+				toggleItems={toggleItems}
 			/>
 			<Education
 				activeTab={activeTab}
 				education={cvData.education}
 				selectedItems={selectedItems}
-				toggleCheckedItems={toggleCheckedItems}
+				toggleItems={toggleItems}
 			/>
 			<Skills
 				activeTab={activeTab}
 				skills={cvData.technicalSkills}
 				selectedItems={selectedItems}
-				toggleItemSelected={toggleItemSelected}
+				toggleItems={toggleItems}
 			/>
 			<Languages
 				activeTab={activeTab}
 				languages={cvData.languages}
 				selectedItems={selectedItems}
-				toggleItemSelected={toggleItemSelected}
+				toggleItems={toggleItems}
 			/>
 
 			{activeTab === "Interactive" && <ResumeButton showModal={showModal} setShowModal={setShowModal} />}

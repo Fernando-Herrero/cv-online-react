@@ -9,7 +9,7 @@ export const Education = (props) => {
 			sectionName="education"
 			activeTab={props.activeTab}
 			selectedItems={props.selectedItems}
-			toggleCheckedItems={props.toggleCheckedItems}
+			toggleItems={props.toggleItems}
 			renderContent={({ institution, degree, location, period }) => (
 				<>
 					<div className="item-title-group">

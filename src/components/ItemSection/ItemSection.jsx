@@ -5,7 +5,7 @@ export const ItemSection = ({
 	sectionName,
 	activeTab,
 	selectedItems,
-	toggleCheckedItems,
+	toggleItems,
 	renderContent,
 }) => {
 	const isInteractive = activeTab === "Interactive";
@@ -22,7 +22,7 @@ export const ItemSection = ({
 							<input
 								type="checkbox"
 								checked={!!selectedItems?.[sectionName]?.[item.id]}
-								onChange={() => toggleCheckedItems(sectionName, item.id)}
+								onChange={() => toggleItems(sectionName, item.id)}
 							/>
 							<div className="item-details">{renderContent(item)}</div>
 						</label>

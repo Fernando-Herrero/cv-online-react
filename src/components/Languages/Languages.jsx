@@ -1,6 +1,6 @@
 import { ButtonItem } from "../ButtonItem/ButtonItem";
 
-export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelected }) => {
+export const Languages = ({ activeTab, languages, selectedItems, toggleItems }) => {
 	const isInteractive = activeTab === "Interactive";
 
 	return (
@@ -16,7 +16,7 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItemSelec
 								key={id}
 								isSelected={isSelected}
 								name={name}
-								onClick={() => toggleItemSelected("languages", id)}
+								onClick={() => toggleItems("languages", id)}
 								level={level}
 								flag={flag}
 							/>
