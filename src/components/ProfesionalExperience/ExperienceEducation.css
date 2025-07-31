@@ -46,3 +46,7 @@
 	list-style-position: inside;
 	padding-left: var(--spacing-md);
 }
+
+.experience-resume {
+	padding-top: var(--spacing-md);
+}

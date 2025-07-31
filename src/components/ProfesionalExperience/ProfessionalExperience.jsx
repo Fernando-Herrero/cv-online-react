@@ -29,8 +29,8 @@ export const ProfessionalExperience = (props) => {
 						<p>{period}</p>
 					</div>
 					<ul className="experience-responsabilities">
-						{responsibilities.map((res, i) => (
-							<li key={`${id}}-${i}`}>{res}</li>
+						{responsibilities?.map((res, i) => (
+							<li key={`${id}-${i}`}>{res}</li>
 						))}
 					</ul>
 				</>

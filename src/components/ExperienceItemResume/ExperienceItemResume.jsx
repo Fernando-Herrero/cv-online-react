@@ -1,30 +1,27 @@
-export const ExperienceItemResume = ({ data, valuesSelection }) => {
-	const { company, position, location, period, responsibilities } = data;
-	const normalizedValues = valuesSelection.map((v) => v.trim().toLowerCase());
-
-	const hasAnySelected =
-		normalizedValues.includes(company?.trim().toLowerCase() || "") ||
-		normalizedValues.includes(position?.trim().toLowerCase() || "") ||
-		normalizedValues.includes(location?.trim().toLowerCase() || "") ||
-		normalizedValues.includes(period?.trim().toLowerCase() || "") ||
-		responsibilities.some((responsability) =>
-			normalizedValues.includes(responsability?.trim().toLowerCase() || "")
-		);
-
-	if (!hasAnySelected) return null;
+export const ExperienceItemResume = ({ data }) => {
+	const { id, image, company, position, location, period, responsibilities } = data;
 
 	return (
-		<div>
-			{normalizedValues.includes(company?.trim().toLowerCase() || "") && <p>{company}</p>}
-			{normalizedValues.includes(position?.trim().toLowerCase() || "") && <p>{position}</p>}
-			{normalizedValues.includes(location?.trim().toLowerCase() || "") && <p>{location}</p>}
-			{normalizedValues.includes(period?.trim().toLowerCase() || "") && <p>{period}</p>}
-			<ul>
-				{responsibilities?.map((responsability, i) =>
-					normalizedValues.includes(responsability?.trim().toLowerCase() || "") ? (
-						<li key={i}>{responsability}</li>
-					) : null
-				)}
+		<div className="item-details experience-resume">
+			<div className="item-title-group">
+				<span className="item-logo-title">
+					<img src={image} alt={company} className="item-logo" />
+					<p>
+						<strong>{company}</strong>
+					</p>
+				</span>
+				<p>{position}</p>
+			</div>
+			<div className="item-title-group">
+				<p>
+					<strong>{location}</strong>
+				</p>
+				<p>{period}</p>
+			</div>
+			<ul className="experience-responsabilities">
+				{responsibilities?.map((res, i) => (
+					<li key={`${id}-${i}`}>{res}</li>
+				))}
 			</ul>
 		</div>
 	);
