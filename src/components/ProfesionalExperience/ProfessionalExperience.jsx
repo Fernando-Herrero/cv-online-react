@@ -10,7 +10,7 @@ export const ProfessionalExperience = (props) => {
 			sectionName="experience"
 			activeTab={props.activeTab}
 			selectedItems={props.selectedItems}
-			toggleCheckedItems={props.toggleCheckedItems}
+			toggleItems={props.toggleItems}
 			renderContent={({ id, image, company, position, location, period, responsibilities }) => (
 				<>
 					<div className="item-title-group">
