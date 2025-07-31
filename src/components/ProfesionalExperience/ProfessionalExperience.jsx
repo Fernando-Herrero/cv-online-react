@@ -11,7 +11,7 @@ export const ProfessionalExperience = (props) => {
 			activeTab={props.activeTab}
 			selectedItems={props.selectedItems}
 			toggleCheckedItems={props.toggleCheckedItems}
-			renderContent={({ image, company, position, location, period, responsibilities }) => (
+			renderContent={({ id, image, company, position, location, period, responsibilities }) => (
 				<>
 					<div className="item-title-group">
 						<span className="item-logo-title">
@@ -30,7 +30,7 @@ export const ProfessionalExperience = (props) => {
 					</div>
 					<ul className="experience-responsabilities">
 						{responsibilities.map((res, i) => (
-							<li key={`${company}-${i}`}>{res}</li>
+							<li key={`${id}}-${i}`}>{res}</li>
 						))}
 					</ul>
 				</>
