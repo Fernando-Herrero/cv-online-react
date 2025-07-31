@@ -1,5 +1,5 @@
 import { ItemSection } from "../ItemSection/ItemSection";
-import "./ExperienceEducation.css";
+import "./ExperienceEducation.css"
 
 export const ProfessionalExperience = (props) => {
 	return (
