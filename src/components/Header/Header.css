@@ -117,6 +117,38 @@ body.dark-theme .header-text-anc a:hover {
 	pointer-events: none;
 }
 
+.portfolio-content {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.portfolio {
+	color: var(--accent-color);
+	transition: 0.3s ease;
+	position: relative;
+}
+
+.portfolio::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0%;
+	height: 1px;
+	background-color: var(--accent-color);
+	transition: width 0.3s ease;
+}
+
+.portfolio:hover::after {
+	width: 100%;
+}
+
+.portfolio:hover {
+	color: var(--accent-hover);
+	transform: scale(1.05);
+}
+
 @media (width >= 500px) {
 	.header-name {
 		font-size: var(--font-size-big);

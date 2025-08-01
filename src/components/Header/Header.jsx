@@ -3,6 +3,7 @@ import "./Header.css";
 import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
 import { MdLocationOn } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 export const Header = ({ activeTab, personalInfo, summary }) => {
 	const { fullName, title, location, email, linkedin, github } = personalInfo;
@@ -39,6 +40,11 @@ export const Header = ({ activeTab, personalInfo, summary }) => {
 						<SiGithub className="contact-icon" color="#181717" />
 					</a>
 				</div>
+
+				<a href="https://fernando-herrero.netlify.app/" className="portfolio-content">
+					<FaArrowRight />
+					<p className="portfolio">PORTFOLIO</p>
+				</a>
 			</div>
 
 			<button className={`summary-btn ${activeTab !== "Interactive" ? "hide" : ""}`} onClick={onClickSummary}>
