@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { storage } from "../helpers/storage";
 
 export const useSelectedItems = () => {
-	const [selectedItems, setSelectedItems] = useState({
-		experience: {},
-		education: {},
-		technicalSkills: {},
-		languages: {},
-	});
+	const saveItems = storage.get("selectedItems");
+	const [selectedItems, setSelectedItems] = useState(
+		saveItems || {
+			experience: {},
+			education: {},
+			technicalSkills: {},
+			languages: {},
+		}
+	);
 	const toggleItems = (section, id) => {
 		setSelectedItems((prev) => {
 			const newSection = { ...prev[section] };
@@ -17,12 +21,11 @@ export const useSelectedItems = () => {
 				newSection[id] = true;
 			}
 
-			console.log("New selected state:", { ...prev, [section]: newSection });
+			const update = { ...prev, [section]: newSection };
 
-			return {
-				...prev,
-				[section]: newSection,
-			};
+			storage.save("selectedItems", update);
+
+			return update;
 		});
 	};
 
