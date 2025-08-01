@@ -5,7 +5,8 @@ import { useState } from "react";
 import { storage } from "../../helpers/storage";
 
 export const TabsNavigation = ({ activeTab, setActiveTab }) => {
-	const [showIntro, setShowIntro] = useState(true);
+	const saveIntro = storage.get("messageIntro");
+	const [showIntro, setShowIntro] = useState(!saveIntro);
 
 	const onToggleClose = () => {
 		setShowIntro((prev) => !prev);

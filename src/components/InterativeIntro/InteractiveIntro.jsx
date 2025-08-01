@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./InteractiveIntro.css";
+import { storage } from "../../helpers/storage";
 
 export const InteractiveIntro = ({ onToggleClose }) => {
 	const [animateOut, setAnimateOut] = useState(false);
@@ -27,7 +28,13 @@ export const InteractiveIntro = ({ onToggleClose }) => {
 					All selected data will be gathered into a final summary file to help you compile everything
 					efficiently.
 				</p>
-				<button className="toggle-btn" onClick={handleClose}>
+				<button
+					className="toggle-btn"
+					onClick={() => {
+						storage.save("messageIntro", true);
+						handleClose();
+					}}
+				>
 					Got it!
 				</button>
 			</div>
