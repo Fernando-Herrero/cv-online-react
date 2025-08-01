@@ -41,3 +41,11 @@
 	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 999;
 }
+
+.overlay.fade-in {
+	animation: fade-in 0.5s forwards;
+}
+
+.overlay.fade-out {
+	animation: fade-out 0.5s forwards;
+}

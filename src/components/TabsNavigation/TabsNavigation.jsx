@@ -1,7 +1,14 @@
 import "./TabsNavigation.css";
 import { TABS } from "./Tabs";
+import { InteractiveIntro } from "../InterativeIntro/InteractiveIntro";
+import { useState } from "react";
 
 export const TabsNavigation = ({ activeTab, setActiveTab }) => {
+	const [showIntro, setShowIntro] = useState(true);
+
+	const onToggleClose = () => {
+		setShowIntro((prev) => !prev);
+	};
 	return (
 		<nav className="nav-tabs">
 			{Object.entries(TABS).map(([property, value]) => (
@@ -14,6 +21,7 @@ export const TabsNavigation = ({ activeTab, setActiveTab }) => {
 					{value}
 				</button>
 			))}
+			{activeTab === "Interactive" && showIntro && <InteractiveIntro onToggleClose={onToggleClose} />}
 		</nav>
 	);
 };
