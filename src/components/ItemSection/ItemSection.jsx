@@ -24,10 +24,10 @@ export const ItemSection = ({
 								checked={!!selectedItems?.[sectionName]?.[item.id]}
 								onChange={() => toggleItems(sectionName, item.id)}
 							/>
-							<div className="item-details">{renderContent(item)}</div>
+							{renderContent(item)}
 						</label>
 					) : (
-						<div className="item-details">{renderContent(item)}</div>
+						<>{renderContent(item)}</>
 					)}
 				</div>
 			))}

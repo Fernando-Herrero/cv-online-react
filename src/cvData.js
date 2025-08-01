@@ -24,7 +24,7 @@ export const cvData = {
 		linkedin: "https://www.linkedin.com/in/fernando-herrero-nunez/",
 		github: "https://github.com/Fernando-Herrero",
 	},
-	summary: `Frontend Developer with experience in web development using modern technologies like React, and TypeScript.
+	summary: `Frontend Developer with experience in web development using modern technologies like React, and JavaScript.
 With over 5 years living abroad, I have developed strong self-improvement skills and resilience. Passionate about continuous growth and teamwork to achieve common goals.
 Specialties: React, HTML, CSS, JavaScript, TypeScript, Hexagonal Architecture, Web Fundamentals, and Artificial Intelligence.
 Sports enthusiast, especially fitness and football.`,
