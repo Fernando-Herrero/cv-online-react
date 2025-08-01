@@ -1,0 +1,21 @@
+.languages-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (width >= 500px) {
+	.languages-list li {
+		width: 150px;
+	}
+}
+
+.languages-content.interactive-mode {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.languages-content button {
+	max-width: 150px;
+}

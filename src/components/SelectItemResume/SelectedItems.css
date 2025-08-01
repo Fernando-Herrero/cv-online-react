@@ -1,9 +1,19 @@
+.languages-resume {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-sm);
+}
+
 .resume-skills-languages {
 	box-shadow: var(--box-shadow);
 	padding: var(--spacing-xs);
 	display: flex;
+	flex-direction: column;
     align-items: center;
     justify-content: center;
 	min-height: 40px;
+	max-width: 150px;
     text-align: center;
+	padding: var(--spacing-sm);
 }

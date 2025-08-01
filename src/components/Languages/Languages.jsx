@@ -1,4 +1,5 @@
 import { ButtonItem } from "../ButtonItem/ButtonItem";
+import "./Languages.css"
 
 export const Languages = ({ activeTab, languages, selectedItems, toggleItems }) => {
 	const isInteractive = activeTab === "Interactive";
@@ -6,7 +7,7 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItems }) 
 	return (
 		<section className="section-container">
 			<h2>🌍 Languages</h2>
-			<div className={`items-content ${isInteractive ? "interactive-mode" : ""}`}>
+			<div className={`items-content languages-content ${isInteractive ? "interactive-mode" : ""}`}>
 				{isInteractive ? (
 					languages.map(({ name, id, level, flag }) => {
 						const isSelected = id in selectedItems.languages;
@@ -23,7 +24,7 @@ export const Languages = ({ activeTab, languages, selectedItems, toggleItems }) 
 						);
 					})
 				) : (
-					<ul className="items-list">
+					<ul className="items-list languages-list">
 						{languages.map(({ name, id, level, flag }) => {
 							return (
 								<li key={id}>

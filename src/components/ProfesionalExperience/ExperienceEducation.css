@@ -13,6 +13,14 @@
 .item-checked-wrapper {
 	display: flex;
 	gap: var(--spacing-xs);
+	width: 100%;
+}
+
+.item-text-interactive {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	width: 100%;
 }
 
 .item-details {
@@ -48,5 +56,56 @@
 }
 
 .experience-resume {
-	padding-top: var(--spacing-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	background-color: var(--section-bg);
+}
+
+@media (width >= 500px) {
+	.item-content {
+		gap: var(--spacing-md);
+	}
+
+	.item-details {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.item-title-group {
+		flex: 1;
+	}
+
+	.item-details > .item-title-group:last-child {
+		align-items: flex-end;
+	}
+
+	.item-title-group p:first-child {
+		font-size: var(--font-size-medium);
+	}
+
+	.item-logo-title {
+		font-size: var(--font-size-medium);
+	}
+
+	.item-logo-title img {
+		width: 32px;
+		height: 32px;
+	}
+
+	.item-text-interactive {
+		gap: var(--spacing-md);
+		padding: var(--spacing-sm);
+	}
+}
+
+@media (width >= 700px) {
+	.item-content {
+		padding: var(--spacing-md);
+	}
+
+	.item-text-interactive {
+		padding: var(--spacing-md);
+	}
 }

@@ -30,13 +30,13 @@ export const Header = ({ activeTab, personalInfo, summary }) => {
 
 				<div className="header-text-anc">
 					<a href={`mailto:${email}`}>
-						<SiGmail size={18} color="#D14836" />
+						<SiGmail className="contact-icon" color="#D14836" />
 					</a>
 					<a href={linkedin} target="_blank">
-						<SiLinkedin size={18} color="#0A66C2" />
+						<SiLinkedin className="contact-icon" color="#0A66C2" />
 					</a>
 					<a href={github} target="_blank">
-						<SiGithub size={18} color="#181717" />
+						<SiGithub className="contact-icon" color="#181717" />
 					</a>
 				</div>
 			</div>

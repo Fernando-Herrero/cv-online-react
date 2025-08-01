@@ -39,3 +39,10 @@ body.dark-theme .items-list li {
 	gap: var(--spacing-sm);
 	justify-content: center;
 }
+
+@media (width >= 500px) {
+	.items-list li { 
+		max-width: 150px;
+		min-height: 60px;
+	}
+}
