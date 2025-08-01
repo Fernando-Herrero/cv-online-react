@@ -13,6 +13,14 @@
 .item-checked-wrapper {
 	display: flex;
 	gap: var(--spacing-xs);
+	width: 100%;
+}
+
+.item-text-interactive {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	width: 100%;
 }
 
 .item-details {
@@ -73,7 +81,7 @@
 		font-size: var(--font-size-medium);
 	}
 
-	.item-logo-title  {
+	.item-logo-title {
 		font-size: var(--font-size-medium);
 	}
 
@@ -81,10 +89,19 @@
 		width: 32px;
 		height: 32px;
 	}
+
+	.item-text-interactive {
+		gap: var(--spacing-md);
+		padding: var(--spacing-sm);
+	}
 }
 
 @media (width >= 700px) {
 	.item-content {
+		padding: var(--spacing-md);
+	}
+
+	.item-text-interactive {
 		padding: var(--spacing-md);
 	}
 }
