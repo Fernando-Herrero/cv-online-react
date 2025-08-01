@@ -6,7 +6,7 @@ export const ResumeButton = ({ showModal, setShowModal }) => {
 	};
 
 	return (
-		<button className="resume-btn" onClick={onResumeClick}>
+		<button className="toggle-btn" onClick={onResumeClick}>
 			{showModal ? "Hide Resume" : "Resume"}
 		</button>
 	);

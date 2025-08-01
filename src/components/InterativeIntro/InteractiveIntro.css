@@ -1,0 +1,78 @@
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in-scale {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.6);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes fade-out-scale {
+	from {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.6);
+	}
+}
+
+.interactive-tab-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-md);
+	font-size: var(--font-size-large);
+	line-height: 1.5;
+	width: 85vw;
+	height: fit-content;
+	max-width: 400px;
+	padding: var(--spacing-md);
+	background-color: var(--bg-color);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform-origin: center center;
+	z-index: 1000;
+}
+
+.interactive-tab-info.fade-in-scale {
+	animation: fade-in-scale 0.5s forwards;
+}
+
+.interactive-tab-info.fade-out-scale {
+	animation: fade-out-scale 0.5s forwards;
+}
+
+.interactive-tab-info h3 {
+	text-transform: uppercase;
+}
+
+.interactive-tab-info p {
+	background-color: var(--section-bg);
+	padding: var(--spacing-sm);
+	border-radius: var(--border-radius);
+}
