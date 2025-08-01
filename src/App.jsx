@@ -12,9 +12,11 @@ import { Languages } from "./components/Languages/Languages";
 import { DarkTheme } from "./components/DarkTheme/DarkTheme";
 import { cvData } from "./cvData";
 import { useSelectedItems } from "./hooks/useSelectedItems.js";
+import { storage } from "./helpers/storage.js";
 
 export const App = () => {
-	const [activeTab, setActiveTab] = useState(TABS.TRADITIONAL);
+	const saveTab = storage.get("activeTab");
+	const [activeTab, setActiveTab] = useState(saveTab || TABS.TRADITIONAL);
 	const [showModal, setShowModal] = useState(false);
 	const { selectedItems, toggleItems } = useSelectedItems();
 

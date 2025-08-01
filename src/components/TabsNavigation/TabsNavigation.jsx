@@ -2,6 +2,7 @@ import "./TabsNavigation.css";
 import { TABS } from "./Tabs";
 import { InteractiveIntro } from "../InterativeIntro/InteractiveIntro";
 import { useState } from "react";
+import { storage } from "../../helpers/storage";
 
 export const TabsNavigation = ({ activeTab, setActiveTab }) => {
 	const [showIntro, setShowIntro] = useState(true);
@@ -15,7 +16,10 @@ export const TabsNavigation = ({ activeTab, setActiveTab }) => {
 				<button
 					key={property}
 					className={`tab ${activeTab === value ? "active" : ""}`}
-					onClick={() => setActiveTab(value)}
+					onClick={() => {
+						storage.save("activeTab", value);
+						setActiveTab(value);
+					}}
 					data-tab={value.toLowerCase()}
 				>
 					{value}
