@@ -56,7 +56,11 @@
 }
 
 .experience-resume {
-	padding-top: var(--spacing-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	background-color: var(--section-bg);
 }
 
 @media (width >= 500px) {

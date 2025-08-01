@@ -2,7 +2,7 @@ export const ExperienceItemResume = ({ data }) => {
 	const { id, image, company, position, location, period, responsibilities } = data;
 
 	return (
-		<div className="item-details experience-resume">
+		<div className="experience-resume">
 			<div className="item-details">
 				<div className="item-title-group">
 					<span className="item-logo-title">
