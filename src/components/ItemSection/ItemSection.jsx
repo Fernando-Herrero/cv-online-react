@@ -15,22 +15,25 @@ export const ItemSection = ({
 			<h2>
 				{emoji} {title}
 			</h2>
-			{items.map((item) => (
-				<div key={item.id} className="item-content">
-					{isInteractive ? (
-						<label className="item-checked-wrapper">
-							<input
-								type="checkbox"
-								checked={!!selectedItems?.[sectionName]?.[item.id]}
-								onChange={() => toggleItems(sectionName, item.id)}
-							/>
-							<div className="item-text-interactive">{renderContent(item)}</div>
-						</label>
-					) : (
-						<>{renderContent(item)}</>
-					)}
-				</div>
-			))}
+			{items.map((item) => {
+				const isChecked = !!selectedItems?.[sectionName]?.[item.id];
+				return (
+					<div key={item.id} className={`item-content ${isChecked ? "border-line" : ""}`}>
+						{isInteractive ? (
+							<label className="item-checked-wrapper">
+								<input
+									type="checkbox"
+									checked={isChecked}
+									onChange={() => toggleItems(sectionName, item.id)}
+								/>
+								<div className="item-text-interactive">{renderContent(item)}</div>
+							</label>
+						) : (
+							<>{renderContent(item)}</>
+						)}
+					</div>
+				);
+			})}
 		</section>
 	);
 };
