@@ -18,6 +18,7 @@
 	display: flex;
 	gap: var(--spacing-xs);
 	width: 100%;
+	cursor: pointer;
 }
 
 .item-text-interactive {
