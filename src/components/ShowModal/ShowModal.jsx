@@ -11,8 +11,8 @@ export const ShowModal = ({ showModal, setShowModal, selectedItems, activeTab, c
 	return (
 		<>
 			<div className="overlay"></div>
-			<section className="show-modal-container">
-				{!hasSelectedItems && <p>There isn't any item selected</p>}
+			<section className={`show-modal-container ${hasSelectedItems ? "" : "no-items-selected"}`}>
+				{!hasSelectedItems && <p className="no-items-message">There isn't any item selected</p>}
 				{hasSelectedItems && (
 					<div className="show-modal-resume">
 						<Header activeTab={activeTab} personalInfo={cvData.personalInfo} summary={cvData.summary} />

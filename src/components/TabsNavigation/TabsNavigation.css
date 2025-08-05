@@ -1,3 +1,8 @@
+.nav-tabs {
+	display: flex;
+	max-width: 200px;
+}
+
 .tab {
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -9,11 +14,13 @@
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
 	transition: all 0.2s ease;
+	flex: 1;
 }
 
 .tab.active {
-	transform-origin: left center;
-	transform: scale(1.2, 1.2);
+	transform-origin: bottom center;
+	transform: scaleY(1.2);
+	flex: 3;
 }
 
 .tab:hover {

@@ -20,6 +20,14 @@
 	z-index: 1000;
 }
 
+.show-modal-container.no-items-selected {
+	justify-content: center;
+	width: fit-content;
+	height: fit-content;
+	min-height: 0;
+	padding: var(--spacing-md);
+}
+
 .resume-section {
 	display: flex;
 	flex-direction: column;
@@ -30,6 +38,10 @@
 
 .resume-section ul {
 	list-style-position: inside;
+}
+
+.no-items-message {
+	display: flex;
 }
 
 .overlay {

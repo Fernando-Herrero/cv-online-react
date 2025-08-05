@@ -154,6 +154,10 @@ body.dark-theme .header-text-anc a:hover {
 		font-size: var(--font-size-big);
 	}
 
+	body.dark-theme .header-name {
+		font-size: var(--font-size-big);
+	}
+
 	.header-text-anc .header-text:first-child {
 		font-size: var(--font-size-large);
 	}

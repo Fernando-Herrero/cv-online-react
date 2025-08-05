@@ -92,6 +92,7 @@ a {
 	width: var(--container-width);
 	margin: 0 auto;
 	box-shadow: var(--box-shadow);
+	padding-top: var(--spacing-xs);
 	padding-bottom: var(--spacing-sm);
 	margin-bottom: var(--spacing-sm);
 	position: relative;
